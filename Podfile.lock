@@ -1,0 +1,43 @@
+PODS:
+  - ChameleonFramework/Default (2.1.0)
+  - ChameleonFramework/Swift (2.1.0):
+    - ChameleonFramework/Default
+  - Eureka (2.0.0-beta.1)
+  - Material (2.4.1):
+    - Material/Core (= 2.4.1)
+  - Material/Core (2.4.1)
+  - RZTransitions (1.2.1)
+  - Spring (1.0.3)
+
+DEPENDENCIES:
+  - ChameleonFramework/Swift (from `https://github.com/ViccAlexander/Chameleon.git`)
+  - Eureka (~> 2.0.0-beta.1)
+  - Material (~> 2.0)
+  - RZTransitions
+  - Spring (from `https://github.com/MengTo/Spring.git`, branch `swift3`)
+
+EXTERNAL SOURCES:
+  ChameleonFramework:
+    :git: https://github.com/ViccAlexander/Chameleon.git
+  Spring:
+    :branch: swift3
+    :git: https://github.com/MengTo/Spring.git
+
+CHECKOUT OPTIONS:
+  ChameleonFramework:
+    :commit: dcf98f9bf3a632a7f40679b7da46f09681e48526
+    :git: https://github.com/ViccAlexander/Chameleon.git
+  Spring:
+    :commit: 3a9227c6e9157e7b47f5ac1ee5abab2a56b50002
+    :git: https://github.com/MengTo/Spring.git
+
+SPEC CHECKSUMS:
+  ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
+  Eureka: d014adf16406745e1a78d5790ea37ed130a0a8e5
+  Material: bdf4386e3600537077c2667764292f8dd581e541
+  RZTransitions: 0e0013fda6989ee84dc5e44dca79fd539e1a975a
+  Spring: 3f02b5dc3308572ef177b3cad0fa7bbc4b0706f7
+
+PODFILE CHECKSUM: a2210508dafdd232724f5ab940cd1fe4bee09a37
+
+COCOAPODS: 1.2.0.beta.1

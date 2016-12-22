@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="f0J-JI-oTr">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Custom Cells Controller-->
+        <scene sceneID="tbt-KE-e25">
+            <objects>
+                <tableViewController id="Ezx-Lo-7mX" customClass="CustomCellsController" customModule="TextField" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="UQN-Ik-6HD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="JuP-Ut-oE6">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JuP-Ut-oE6" id="ZYN-Rb-q9Y">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Ezx-Lo-7mX" id="fML-Ga-Mcq"/>
+                            <outlet property="delegate" destination="Ezx-Lo-7mX" id="e9j-N0-xIX"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h24-fb-nn7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1" y="1084"/>
+        </scene>
+        <!--Tutor Or Tutee View Controller-->
+        <scene sceneID="2OA-Hw-Woh">
+            <objects>
+                <viewController id="f1O-17-5Nh" customClass="TutorOrTuteeViewController" customModule="TextField" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="MeE-ad-Wbd"/>
+                        <viewControllerLayoutGuide type="bottom" id="ZPH-QJ-GJX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="XYM-7p-E6M">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6mn-N7-jTL" customClass="SpringButton" customModule="Spring">
+                                <rect key="frame" x="164" y="39" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="Student">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="studentTapped:" destination="f1O-17-5Nh" eventType="touchUpInside" id="X2U-gT-Tfr"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ys-69-rZ9" customClass="SpringButton" customModule="Spring">
+                                <rect key="frame" x="164" y="258" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="Tutor">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="tutorTapped:" destination="f1O-17-5Nh" eventType="touchUpInside" id="bbR-Sk-VML"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="ballView" destination="6mn-N7-jTL" id="TQ7-x4-0Ct"/>
+                        <outlet property="ballView2" destination="9ys-69-rZ9" id="mEF-yN-G1I"/>
+                        <segue destination="zlZ-Tz-VvW" kind="show" identifier="toTuteeSignUpVC" id="GTo-4u-K6u"/>
+                        <segue destination="Ezx-Lo-7mX" kind="show" identifier="toTutorSignUpVC" id="JkN-MB-NsO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gHJ-44-Zss" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="845.60000000000002" y="900.89955022488766"/>
+        </scene>
+        <!--TuteeVC-->
+        <scene sceneID="E0p-wa-5BI">
+            <objects>
+                <viewController title="TuteeVC" id="zlZ-Tz-VvW" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="RIk-py-ltH"/>
+                        <viewControllerLayoutGuide type="bottom" id="wHd-wa-RqD"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="e6N-Gc-bDJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oXh-dq-Zli" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1526" y="1128"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="cG0-wP-MjU">
+            <objects>
+                <viewController id="f0J-JI-oTr" customClass="ViewController" customModule="TextField" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="GfZ-H1-YzK"/>
+                        <viewControllerLayoutGuide type="bottom" id="s31-lQ-90V"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="RTu-MD-cWI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <segue destination="f1O-17-5Nh" kind="show" identifier="goToTutorOrTutee" id="OLB-7F-WMk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pEX-Hq-NAG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1399" y="393"/>
+        </scene>
+    </scenes>
+</document>

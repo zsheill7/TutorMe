@@ -6,6 +6,7 @@ PODS:
   - Material (2.4.1):
     - Material/Core (= 2.4.1)
   - Material/Core (2.4.1)
+  - PagingMenuController (1.4.0)
   - RZTransitions (1.2.1)
   - Spring (1.0.3)
 
@@ -13,6 +14,7 @@ DEPENDENCIES:
   - ChameleonFramework/Swift (from `https://github.com/ViccAlexander/Chameleon.git`)
   - Eureka (~> 2.0.0-beta.1)
   - Material (~> 2.0)
+  - PagingMenuController
   - RZTransitions
   - Spring (from `https://github.com/MengTo/Spring.git`, branch `swift3`)
 
@@ -35,9 +37,10 @@ SPEC CHECKSUMS:
   ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
   Eureka: d014adf16406745e1a78d5790ea37ed130a0a8e5
   Material: bdf4386e3600537077c2667764292f8dd581e541
+  PagingMenuController: 79a9ce7472839d9afd0a6b879af6132822644a47
   RZTransitions: 0e0013fda6989ee84dc5e44dca79fd539e1a975a
   Spring: 3f02b5dc3308572ef177b3cad0fa7bbc4b0706f7
 
-PODFILE CHECKSUM: a2210508dafdd232724f5ab940cd1fe4bee09a37
+PODFILE CHECKSUM: aed00a330cc7d68d1c0989bd02f1ceb4127ec17c
 
 COCOAPODS: 1.2.0.beta.1

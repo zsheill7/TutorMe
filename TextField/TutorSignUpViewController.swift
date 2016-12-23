@@ -11,6 +11,59 @@ import Eureka
 import Material
 import ChameleonFramework
 
+private enum MenuSection {
+    case all(content: AllContent)
+    case menuView(content: MenuViewContent)
+    case menuController(content: MenuControllerContent)
+    
+    fileprivate enum AllContent: Int { case standard, segmentedControl, infinite }
+    fileprivate enum MenuViewContent: Int { case underline, roundRect }
+    fileprivate enum MenuControllerContent: Int { case standard }
+    
+    init?(indexPath: IndexPath) {
+        switch ((indexPath as NSIndexPath).section, (indexPath as NSIndexPath).row) {
+        case (0, let row):
+            guard let content = AllContent(rawValue: row) else { return nil }
+            self = .all(content: content)
+        case (1, let row):
+            guard let content = MenuViewContent(rawValue: row) else { return nil }
+            self = .menuView(content: content)
+        case (2, let row):
+            guard let content = MenuControllerContent(rawValue: row) else { return nil }
+            self = .menuController(content: content)
+        default: return nil
+        }
+    }
+    
+    var options: PagingMenuControllerCustomizable {
+        let options: PagingMenuControllerCustomizable
+        switch self {
+        case .all(let content):
+            switch content {
+            case .standard:
+                options = PagingMenuOptions1()
+            case .segmentedControl:
+                options = PagingMenuOptions2()
+            case .infinite:
+                options = PagingMenuOptions3()
+            }
+        case .menuView(let content):
+            switch content {
+            case .underline:
+                options = PagingMenuOptions4()
+            case .roundRect:
+                options = PagingMenuOptions5()
+            }
+        case .menuController(let content):
+            switch content {
+            case .standard:
+                options = PagingMenuOptions6()
+            }
+        }
+        return options
+    }
+}
+
 class TutorSignUpViewController: FormViewController {
 
     override func viewDidLoad() {
@@ -324,10 +377,11 @@ class CustomCellsController : FormViewController {
                 
                 +++ Section()
                 <<< ButtonRow() {
-                    $0.title = "Tap to force form validation"
+                    $0.title = "NEXT"
                     }
                     .onCellSelection { cell, row in
                         row.section?.form?.validate()
+                        self.performSegue(withIdentifier: "toPagingMenuVC", sender: self)
             }
         LabelRow.defaultCellUpdate = { cell, row in
             cell.contentView.backgroundColor = .red
@@ -346,5 +400,13 @@ class CustomCellsController : FormViewController {
         
         
         }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        let sectionType = MenuSection(indexPath: NSIndexPath(row: 0, section: 0) as IndexPath)
+        let viewController = segue.destination as! PagingMenuViewController
+        
+        viewController.title = "Welcome"
+        viewController.options = sectionType?.options
     }
+}
 

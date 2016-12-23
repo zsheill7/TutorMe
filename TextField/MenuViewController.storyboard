@@ -71,10 +71,10 @@
             </objects>
             <point key="canvasLocation" x="493.60000000000002" y="302.6986506746627"/>
         </scene>
-        <!--View Controller-->
+        <!--Data Source-->
         <scene sceneID="Q4a-LU-bm1">
             <objects>
-                <viewController id="c7y-Wh-tin" sceneMemberID="viewController">
+                <viewController id="c7y-Wh-tin" customClass="CalendarViewController" customModule="TutorMe" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fi3-pI-RWS"/>
                         <viewControllerLayoutGuide type="bottom" id="6eo-Ca-oFf"/>
@@ -86,6 +86,10 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VAK-QV-I5V" customClass="FSCalendar">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="324"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="c7y-Wh-tin" id="HW1-Qo-T3k"/>
+                                    <outlet property="delegate" destination="c7y-Wh-tin" id="CRl-Y6-0Ky"/>
+                                </connections>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

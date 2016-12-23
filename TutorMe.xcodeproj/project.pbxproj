@@ -176,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				96090AE61D9CDD2E00709CA6 /* TutorMe */,
+				C879844F1E0B9781003EB7A1 /* UITests */,
 				96090AE51D9CDD2E00709CA6 /* Products */,
 				C715FA72A8755E6E0706E54B /* Pods */,
 				45C0CE53565FE65B32BFB150 /* Frameworks */,
@@ -195,24 +196,23 @@
 			children = (
 				C8EE882D1E0DB050003775C2 /* Calendar */,
 				C8EE88611E0DB162003775C2 /* Calendar Obj-C Files */,
-				96090AE91D9CDD2E00709CA6 /* SignUpViewController.swift */,
-				C879844F1E0B9781003EB7A1 /* UITests */,
 				C87984AD1E0C7F4C003EB7A1 /* Xib Files */,
+				C87984A81E0C76DD003EB7A1 /* Paging Menu View Controller */,
+				C87984471E0B9760003EB7A1 /* Custom Row and Cell */,
 				96090AE71D9CDD2E00709CA6 /* AppDelegate.swift */,
 				C88498BF1E0B51A0000C4675 /* Main.storyboard */,
 				96090AF01D9CDD2E00709CA6 /* LaunchScreen.storyboard */,
 				C87984B01E0CC00A003EB7A1 /* PagingMenuViewController.storyboard */,
 				C87984AE1E0C8138003EB7A1 /* MenuViewController.storyboard */,
-				C88498C51E0B8B42000C4675 /* CustomCells.swift */,
 				C88498C11E0B5B4F000C4675 /* TutorOrTuteeViewController.swift */,
 				C88498C31E0B8A5C000C4675 /* TutorSignUpViewController.swift */,
-				C87984A81E0C76DD003EB7A1 /* Paging Menu View Controller */,
-				C87984471E0B9760003EB7A1 /* Custom Row and Cell */,
-				96090AEE1D9CDD2E00709CA6 /* Assets.xcassets */,
+				96090AE91D9CDD2E00709CA6 /* SignUpViewController.swift */,
+				C88498C51E0B8B42000C4675 /* CustomCells.swift */,
 				96090AF31D9CDD2E00709CA6 /* Info.plist */,
 				C87984B21E0D013A003EB7A1 /* GoogleService-Info.plist */,
 				C87984B41E0D01FB003EB7A1 /* User.swift */,
 				C8EE88281E0D08DC003775C2 /* TutorsTableViewController.swift */,
+				96090AEE1D9CDD2E00709CA6 /* Assets.xcassets */,
 			);
 			name = TutorMe;
 			path = TextField;
@@ -262,7 +262,7 @@
 			children = (
 			);
 			name = UITests;
-			path = ../../../Eureka/ExampleUITests;
+			path = ../../Eureka/ExampleUITests;
 			sourceTree = "<group>";
 		};
 		C87984A81E0C76DD003EB7A1 /* Paging Menu View Controller */ = {

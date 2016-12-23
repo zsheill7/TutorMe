@@ -11,9 +11,9 @@ import UIKit
 class UsersViewController: UITableViewController {
     var users = [[String: AnyObject]]()
     
-    class func instantiateFromStoryboard() -> UsersViewController {
+    class func instantiateFromStoryboard() -> TutorsTableViewController {
         let storyboard = UIStoryboard(name: "MenuViewController", bundle: nil)
-        return storyboard.instantiateViewController(withIdentifier: String(describing: self)) as! UsersViewController
+        return storyboard.instantiateViewController(withIdentifier: String(describing: self)) as! TutorsTableViewController
     }
     
     // MARK: - Lifecycle

@@ -33,7 +33,7 @@ import Material
 import ChameleonFramework
 import RZTransitions
 
-class ViewController: UIViewController {
+class SignUpViewController: UIViewController {
     private var nameField: TextField!
     private var emailField: ErrorTextField!
     private var passwordField: TextField!

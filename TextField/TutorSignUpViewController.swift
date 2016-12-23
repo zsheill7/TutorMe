@@ -407,6 +407,7 @@ class CustomCellsController : FormViewController {
         
         viewController.title = "Welcome"
         viewController.options = sectionType?.options
+   
     }
 }
 

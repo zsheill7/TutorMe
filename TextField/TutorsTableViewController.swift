@@ -33,7 +33,7 @@ class TutorTableViewCell: UITableViewCell {
 class TutorsTableViewController: UITableViewController {
 
     var dbRef: FIRDatabaseReference!
-    
+    var tutors = [User]()
     
     
     
@@ -48,13 +48,15 @@ class TutorsTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
     func startObservingDB () {
-        /*dbRef.observe(.value) { (snapshot: FIRDataSnapshot) in
-            
-        } {(error: NSError) in
-            print(error.description)
-        }*/
+        
         dbRef.observe(.value, with: { (snapshot: FIRDataSnapshot) in
-            
+            var newUsers = [User]()
+            for user in snapshot.children {
+                let userObject = User(snapshot: user as! FIRDataSnapshot)
+                newUsers.append(userObject)
+            }
+            self.tutors = newUsers
+            self.tableView.reloadData()
         }) { (error: Error) in
             print(error)
         }
@@ -68,23 +70,27 @@ class TutorsTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return tutors.count
     }
 
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> TutorTableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! TutorTableViewCell
+        let tutor = tutors[indexPath.row]
+        cell.nameLabel?.text = tutor.name
+        cell.schoolLabel?.text = tutor.school
+        cell.gradeLabel?.text = "Age:" + String(tutor.age)
+        
         // Configure the cell...
 
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.

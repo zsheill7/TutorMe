@@ -11,7 +11,7 @@
         <!--Paging Menu View Controller-->
         <scene sceneID="MDr-TF-kMT">
             <objects>
-                <viewController id="Ed7-fB-gXO" customClass="PagingMenuViewController" customModule="TextField" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Ed7-fB-gXO" customClass="PagingMenuViewController" customModule="TutorMe" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0Sx-YY-ElH"/>
                         <viewControllerLayoutGuide type="bottom" id="ySS-Gi-Zeq"/>
@@ -43,7 +43,7 @@
         <!--Paging Menu Controller-->
         <scene sceneID="4JT-XW-eYb">
             <objects>
-                <viewController id="gr2-Y4-ROR" customClass="PagingMenuController" customModule="PagingMenuController" sceneMemberID="viewController">
+                <viewController id="gr2-Y4-ROR" customClass="PagingMenuController" customModule="TutorMe" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="mEN-aa-1Nt"/>
                         <viewControllerLayoutGuide type="bottom" id="oZd-uU-dMD"/>

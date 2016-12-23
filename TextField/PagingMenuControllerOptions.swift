@@ -29,10 +29,11 @@ struct PagingMenuOptions1: PagingMenuControllerCustomizable {
     
     struct MenuOptions: MenuViewCustomizable {
         var displayMode: MenuDisplayMode {
-            return .standard(widthMode: .flexible, centerItem: false, scrollingMode: .pagingEnabled)
+            /*return .standard(widthMode: .flexible, centerItem: false, scrollingMode: .pagingEnabled)*/
+            return .segmentedControl
         }
         var focusMode: MenuFocusMode {
-            return .none
+            return .underline(height: 3, color: UIColor.blue, horizontalPadding: 10, verticalPadding: 0)
         }
         var height: CGFloat {
             return 60
@@ -42,32 +43,46 @@ struct PagingMenuOptions1: PagingMenuControllerCustomizable {
         }
     }
     
+    /*var displayMode: MenuDisplayMode {
+        return .segmentedControl
+    }
+    var focusMode: MenuFocusMode {
+        return .underline(height: 3, color: UIColor.blue, horizontalPadding: 10, verticalPadding: 0)
+    }
+    var itemsOptions: [MenuItemViewCustomizable] {
+        return [MenuItemUsers(), MenuItemRepository(), MenuItemGists(), MenuItemOrganization()]
+    }*/
+    
     struct MenuItemUsers: MenuItemViewCustomizable {
         var displayMode: MenuItemDisplayMode {
-            let title = MenuItemText(text: "Menu")
-            let description = MenuItemText(text: String(describing: self))
-            return .multilineText(title: title, description: description)
+            let title = MenuItemText(text: "Tutors")
+            let description = MenuItemText(text: "")
+            //return .multilineText(title: title, description: description)
+            return .text(title: title)
         }
     }
     struct MenuItemRepository: MenuItemViewCustomizable {
         var displayMode: MenuItemDisplayMode {
-            let title = MenuItemText(text: "Menu")
+            let title = MenuItemText(text: "Calendar")
             let description = MenuItemText(text: String(describing: self))
-            return .multilineText(title: title, description: description)
+            //return .multilineText(title: title, description: description)
+            return .text(title: title)
         }
     }
     struct MenuItemGists: MenuItemViewCustomizable {
         var displayMode: MenuItemDisplayMode {
-            let title = MenuItemText(text: "Menu")
+            let title = MenuItemText(text: "Chat")
             let description = MenuItemText(text: String(describing: self))
-            return .multilineText(title: title, description: description)
+            //return .multilineText(title: title, description: description)
+            return .text(title: title)
         }
     }
     struct MenuItemOrganization: MenuItemViewCustomizable {
         var displayMode: MenuItemDisplayMode {
-            let title = MenuItemText(text: "Menu")
+            let title = MenuItemText(text: "My Hours")
             let description = MenuItemText(text: String(describing: self))
-            return .multilineText(title: title, description: description)
+            //return .multilineText(title: title, description: description)
+            return .text(title: title)
         }
     }
 }

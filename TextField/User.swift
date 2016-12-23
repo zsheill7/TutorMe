@@ -8,6 +8,7 @@
 
 import Foundation
 import FirebaseAuth
+import FirebaseDatabase
 
 struct User {
     let uid:String
@@ -37,7 +38,70 @@ struct User {
         } else {
             email = ""
         }
+    }
+    
+    init (snapshot:FIRDataSnapshot) {
         
+        let snapshotValue = snapshot.value as? NSDictionary
+        
+        if let userUID = snapshotValue?["uid"] as? String {
+            uid = userUID
+        } else {
+            uid = ""
+        }
+        
+        if let userEmail = snapshotValue?["email"] as? String {
+            email = userEmail
+        } else {
+           email = ""
+        }
+        
+        if let userAddress = snapshotValue?["address"] as? String {
+            address = userAddress
+        } else {
+            address  = ""
+        }
+        
+        if let userName = snapshotValue?["name"] as? String {
+            name = userName
+        } else {
+            name = ""
+        }
+        
+        if let userDescription = snapshotValue?["description"] as? String {
+            description = userDescription
+        } else {
+            description = ""
+        }
+        
+        if let userIsTutor = snapshotValue?["isTutor"] as? Bool {
+            isTutor = userIsTutor
+        } else {
+            isTutor = false
+        }
+        
+        if let userLanguages = snapshotValue?["languages"] as? [String] {
+            languages = userLanguages
+        } else {
+            languages = [""]
+        }
+        
+        if let userAvailableDays = snapshotValue?["availableDays"] as? [Bool] {
+            availableDays = userAvailableDays
+        } else {
+            availableDays = [false]
+        }
+        
+        if let userSchool = snapshotValue?["school"] as? String {
+            school = userSchool
+        } else {
+            school = ""
+        }
+        if let userAge = snapshotValue?["age"] as? Int {
+            age = userAge
+        } else {
+            age = 0
+        }
         
     }
     

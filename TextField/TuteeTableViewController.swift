@@ -1,70 +1,30 @@
 //
-//  TutorsTableViewController.swift
+//  TuteeTableViewController.swift
 //  TutorMe
 //
-//  Created by Zoe on 12/22/16.
+//  Created by Zoe on 12/23/16.
 //  Copyright © 2016 CosmicMind. All rights reserved.
 //
 
 import UIKit
-import FirebaseDatabase
-import FirebaseAuth
 
-class TutorTableViewCell: UITableViewCell {
-    
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var schoolLabel: UILabel!
-    @IBOutlet weak var gradeLabel: UILabel!
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-    
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        
-        // Configure the view for the selected state
-    }
-    
-}
+class TuteeTableViewController: UITableViewController {
 
-
-class TutorsTableViewController: UITableViewController {
-
-    var dbRef: FIRDatabaseReference!
-    var tutors = [User]()
-    
-    class func instantiateFromStoryboard() -> TutorsTableViewController {
+    class func instantiateFromStoryboard() -> TuteeTableViewController {
         let storyboard = UIStoryboard(name: "MenuViewController", bundle: nil)
-        return storyboard.instantiateViewController(withIdentifier: String(describing: self)) as! TutorsTableViewController
+        return storyboard.instantiateViewController(withIdentifier: String(describing: self)) as! TuteeTableViewController
     }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        dbRef = FIRDatabase.database().reference().child("tutors")
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
-    func startObservingDB () {
-        
-        dbRef.observe(.value, with: { (snapshot: FIRDataSnapshot) in
-            var newUsers = [User]()
-            for user in snapshot.children {
-                let userObject = User(snapshot: user as! FIRDataSnapshot)
-                newUsers.append(userObject)
-            }
-            self.tutors = newUsers
-            self.tableView.reloadData()
-        }) { (error: Error) in
-            print(error)
-        }
-    }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -74,27 +34,23 @@ class TutorsTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        return 0
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return tutors.count
+        return 0
     }
 
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> TutorTableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! TutorTableViewCell
-        let tutor = tutors[indexPath.row]
-        cell.nameLabel?.text = tutor.name
-        cell.schoolLabel?.text = tutor.school
-        cell.gradeLabel?.text = "Age:" + String(tutor.age)
-        
+    /*
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+
         // Configure the cell...
 
         return cell
     }
-    
+    */
 
     /*
     // Override to support conditional editing of the table view.

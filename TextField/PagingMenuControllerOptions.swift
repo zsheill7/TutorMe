@@ -16,12 +16,12 @@ struct MenuItemOrganization: MenuItemViewCustomizable {}
 
 struct PagingMenuOptions1: PagingMenuControllerCustomizable {
     let usersViewController = UsersViewController.instantiateFromStoryboard()
-    let repositoriesViewController = RepositoriesViewController.instantiateFromStoryboard()
-    let gistsViewController = GistsViewController.instantiateFromStoryboard()
+    let calendarViewController = CalendarViewController.instantiateFromStoryboard()
+    let chatViewController = ChatViewController.instantiateFromStoryboard()
     let organizationsViewController = OrganizationsViewController.instantiateFromStoryboard()
     
     var componentType: ComponentType {
-        return .all(menuOptions: MenuOptions(), pagingControllers: [usersViewController, repositoriesViewController, gistsViewController, organizationsViewController])
+        return .all(menuOptions: MenuOptions(), pagingControllers: [usersViewController, calendarViewController, chatViewController, organizationsViewController])
     }
     var lazyLoadingPage: LazyLoadingPage {
         return .all

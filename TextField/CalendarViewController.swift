@@ -8,8 +8,31 @@
 
 import UIKit
 
-class CalendarViewController: UIViewController {
+class CalendarViewController: UIViewController, FSCalendarDataSource, FSCalendarDelegate {
 
+    @IBOutlet weak var calendar: FSCalendar!
+   // @IBOutlet weak var calendarHeightConstraint: NSLayoutConstraint!
+    
+    private let formatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy/MM/dd"
+        return formatter
+    }()
+    private let gregorian: NSCalendar! = NSCalendar(calendarIdentifier:NSCalendar.Identifier.gregorian)
+    
+    class func instantiateFromStoryboard() -> CalendarViewController {
+        let storyboard = UIStoryboard(name: "MenuViewController", bundle: nil)
+        return storyboard.instantiateViewController(withIdentifier: String(describing: self)) as! CalendarViewController
+    }
+
+    func minimumDate(for calendar: FSCalendar) -> Date {
+        return self.formatter.date(from: "2015/01/01")!
+    }
+    
+    func maximumDate(for calendar: FSCalendar) -> Date {
+        return self.formatter.date(from: "2016/10/31")!
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

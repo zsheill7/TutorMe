@@ -12,6 +12,10 @@
 		96090AEA1D9CDD2E00709CA6 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96090AE91D9CDD2E00709CA6 /* SignUpViewController.swift */; };
 		96090AEF1D9CDD2E00709CA6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96090AEE1D9CDD2E00709CA6 /* Assets.xcassets */; };
 		96090AF21D9CDD2E00709CA6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96090AF01D9CDD2E00709CA6 /* LaunchScreen.storyboard */; };
+		C82800DA1E0EFD8B00329B7D /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82800D91E0EFD8B00329B7D /* StringExtensions.swift */; };
+		C82800DC1E0EFD9700329B7D /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82800DB1E0EFD9700329B7D /* UIColorExtensions.swift */; };
+		C82800DE1E0EFDAF00329B7D /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82800DD1E0EFDAF00329B7D /* UIImageExtensions.swift */; };
+		C86ACAF21E0E238300F6695E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86ACAF11E0E238200F6695E /* LoginViewController.swift */; };
 		C87983981E0B90F0003EB7A1 /* WeekDaysCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C87983971E0B90F0003EB7A1 /* WeekDaysCell.xib */; };
 		C87984481E0B9760003EB7A1 /* ImagePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C879843F1E0B9760003EB7A1 /* ImagePickerController.swift */; };
 		C87984491E0B9760003EB7A1 /* ImageRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87984401E0B9760003EB7A1 /* ImageRow.swift */; };
@@ -32,7 +36,7 @@
 		C87984A61E0C76A5003EB7A1 /* Pagable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87984A21E0C76A5003EB7A1 /* Pagable.swift */; };
 		C87984A71E0C76A5003EB7A1 /* PagingMenuControllerCustomizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87984A31E0C76A5003EB7A1 /* PagingMenuControllerCustomizable.swift */; };
 		C87984AF1E0C8138003EB7A1 /* MenuViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C87984AE1E0C8138003EB7A1 /* MenuViewController.storyboard */; };
-		C87984B11E0CC00A003EB7A1 /* PagingMenuViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C87984B01E0CC00A003EB7A1 /* PagingMenuViewController.storyboard */; };
+		C87984B11E0CC00A003EB7A1 /* Tutor.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C87984B01E0CC00A003EB7A1 /* Tutor.storyboard */; };
 		C87984B31E0D013A003EB7A1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C87984B21E0D013A003EB7A1 /* GoogleService-Info.plist */; };
 		C87984B51E0D01FB003EB7A1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87984B41E0D01FB003EB7A1 /* User.swift */; };
 		C88498C01E0B51A0000C4675 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C88498BF1E0B51A0000C4675 /* Main.storyboard */; };
@@ -87,6 +91,10 @@
 		96090AF31D9CDD2E00709CA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B8B62CCD5A010F1F7EC99019 /* Pods_TextField.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TextField.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5875EC10C650ED442BE78C5 /* Pods-TutorMe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TutorMe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TutorMe/Pods-TutorMe.debug.xcconfig"; sourceTree = "<group>"; };
+		C82800D91E0EFD8B00329B7D /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
+		C82800DB1E0EFD9700329B7D /* UIColorExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
+		C82800DD1E0EFDAF00329B7D /* UIImageExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtensions.swift; sourceTree = "<group>"; };
+		C86ACAF11E0E238200F6695E /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C87983971E0B90F0003EB7A1 /* WeekDaysCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WeekDaysCell.xib; sourceTree = "<group>"; };
 		C879843F1E0B9760003EB7A1 /* ImagePickerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImagePickerController.swift; path = Example/CustomRows/ImageRow/ImagePickerController.swift; sourceTree = "<group>"; };
 		C87984401E0B9760003EB7A1 /* ImageRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageRow.swift; path = Example/CustomRows/ImageRow/ImageRow.swift; sourceTree = "<group>"; };
@@ -107,7 +115,7 @@
 		C87984A21E0C76A5003EB7A1 /* Pagable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Pagable.swift; path = Protocols/Pagable.swift; sourceTree = "<group>"; };
 		C87984A31E0C76A5003EB7A1 /* PagingMenuControllerCustomizable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PagingMenuControllerCustomizable.swift; path = Protocols/PagingMenuControllerCustomizable.swift; sourceTree = "<group>"; };
 		C87984AE1E0C8138003EB7A1 /* MenuViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MenuViewController.storyboard; sourceTree = "<group>"; };
-		C87984B01E0CC00A003EB7A1 /* PagingMenuViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PagingMenuViewController.storyboard; sourceTree = "<group>"; };
+		C87984B01E0CC00A003EB7A1 /* Tutor.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Tutor.storyboard; sourceTree = "<group>"; };
 		C87984B21E0D013A003EB7A1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C87984B41E0D01FB003EB7A1 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		C88498BF1E0B51A0000C4675 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -206,7 +214,7 @@
 				96090AE71D9CDD2E00709CA6 /* AppDelegate.swift */,
 				C88498BF1E0B51A0000C4675 /* Main.storyboard */,
 				96090AF01D9CDD2E00709CA6 /* LaunchScreen.storyboard */,
-				C87984B01E0CC00A003EB7A1 /* PagingMenuViewController.storyboard */,
+				C87984B01E0CC00A003EB7A1 /* Tutor.storyboard */,
 				C87984AE1E0C8138003EB7A1 /* MenuViewController.storyboard */,
 				C88498C11E0B5B4F000C4675 /* TutorOrTuteeViewController.swift */,
 				C88498C31E0B8A5C000C4675 /* TutorSignUpViewController.swift */,
@@ -220,6 +228,8 @@
 				C88FFC821E0DEFD500E7972C /* ChatViewController.swift */,
 				C8EE88621E0DB256003775C2 /* CalendarViewController.swift */,
 				96090AEE1D9CDD2E00709CA6 /* Assets.xcassets */,
+				C86ACAF11E0E238200F6695E /* LoginViewController.swift */,
+				C82800DF1E0EFDEB00329B7D /* Extensions */,
 			);
 			name = TutorMe;
 			path = TextField;
@@ -234,6 +244,16 @@
 				4E890B62C5C4984F8E35F824 /* Pods-TutorMe.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		C82800DF1E0EFDEB00329B7D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C82800D91E0EFD8B00329B7D /* StringExtensions.swift */,
+				C82800DB1E0EFD9700329B7D /* UIColorExtensions.swift */,
+				C82800DD1E0EFDAF00329B7D /* UIImageExtensions.swift */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 		C87984411E0B9760003EB7A1 /* ImageRow */ = {
@@ -431,7 +451,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C87984B11E0CC00A003EB7A1 /* PagingMenuViewController.storyboard in Resources */,
+				C87984B11E0CC00A003EB7A1 /* Tutor.storyboard in Resources */,
 				C88498C01E0B51A0000C4675 /* Main.storyboard in Resources */,
 				C87984AF1E0C8138003EB7A1 /* MenuViewController.storyboard in Resources */,
 				96090AF21D9CDD2E00709CA6 /* LaunchScreen.storyboard in Resources */,
@@ -500,6 +520,7 @@
 				96090AEA1D9CDD2E00709CA6 /* SignUpViewController.swift in Sources */,
 				C88FFC811E0DEFAC00E7972C /* TuteeTableViewController.swift in Sources */,
 				C88FFC831E0DEFD500E7972C /* ChatViewController.swift in Sources */,
+				C82800DE1E0EFDAF00329B7D /* UIImageExtensions.swift in Sources */,
 				C8EE88601E0DB144003775C2 /* FSCalendarWeekdayView.m in Sources */,
 				C87984481E0B9760003EB7A1 /* ImagePickerController.swift in Sources */,
 				C8EE88591E0DB144003775C2 /* FSCalendarConstants.m in Sources */,
@@ -509,17 +530,20 @@
 				C8EE885F1E0DB144003775C2 /* FSCalendarStickyHeader.m in Sources */,
 				C8EE88561E0DB144003775C2 /* FSCalendarCell.m in Sources */,
 				C87984921E0C763F003EB7A1 /* PagingMenuController.swift in Sources */,
+				C82800DA1E0EFD8B00329B7D /* StringExtensions.swift in Sources */,
 				C8EE885A1E0DB144003775C2 /* FSCalendarDelegationFactory.m in Sources */,
 				C87984931E0C763F003EB7A1 /* MenuView.swift in Sources */,
 				C8EE88631E0DB256003775C2 /* CalendarViewController.swift in Sources */,
 				C88498C41E0B8A5D000C4675 /* TutorSignUpViewController.swift in Sources */,
 				C8EE88291E0D08DC003775C2 /* TutorsTableViewController.swift in Sources */,
 				C8EE88521E0DB144003775C2 /* FSCalendar+Deprecated.m in Sources */,
+				C86ACAF21E0E238300F6695E /* LoginViewController.swift in Sources */,
 				C879844A1E0B9760003EB7A1 /* FloatLabelTextField.swift in Sources */,
 				C8EE885E1E0DB144003775C2 /* FSCalendarScopeHandle.m in Sources */,
 				C87984A71E0C76A5003EB7A1 /* PagingMenuControllerCustomizable.swift in Sources */,
 				C8EE885B1E0DB144003775C2 /* FSCalendarDelegationProxy.m in Sources */,
 				C879849B1E0C763F003EB7A1 /* RepositoriesViewController.swift in Sources */,
+				C82800DC1E0EFD9700329B7D /* UIColorExtensions.swift in Sources */,
 				C88498C61E0B8B42000C4675 /* CustomCells.swift in Sources */,
 				C87984491E0B9760003EB7A1 /* ImageRow.swift in Sources */,
 				C8EE88571E0DB144003775C2 /* FSCalendarCollectionView.m in Sources */,

@@ -17,4 +17,5 @@ use_frameworks!
  pod 'Firebase/Storage’
  pod 'FSCalendar'
  pod 'JSQMessagesViewController'
+ pod 'SCLAlertView'
 end

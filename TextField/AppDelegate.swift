@@ -38,10 +38,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     func applicationDidFinishLaunching(_ application: UIApplication) {
-        /*window = UIWindow(frame: Screen.bounds)
-        window!.rootViewController = ViewController()
-        window!.makeKeyAndVisible()*/
+        
         
         FIRApp.configure()
     }
+    
+    //let ref = Firebase(url:"https://tutorme-e7292.firebaseio.com/users")
 }

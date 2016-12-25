@@ -22,6 +22,20 @@ struct User {
     let languages: [String]
     let availableDays: [Bool]
     
+    /*
+     
+     uid
+     name
+     age
+     description
+     isTutor
+     languages
+     address
+     availableDays
+     school
+ 
+ */
+    
     init(userData:FIRUser) {
         uid = userData.uid
         name = ""

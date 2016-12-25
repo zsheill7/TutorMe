@@ -37,12 +37,12 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h24-fb-nn7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1" y="1128"/>
+            <point key="canvasLocation" x="636" y="1181"/>
         </scene>
-        <!--PagingMenuViewController-->
+        <!--Tutor-->
         <scene sceneID="EQF-AC-2xd">
             <objects>
-                <viewControllerPlaceholder storyboardName="PagingMenuViewController" id="X1N-CK-Yff" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="Tutor" id="X1N-CK-Yff" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5mP-3f-mgJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-186" y="1591"/>
@@ -111,7 +111,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oXh-dq-Zli" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1526" y="1128"/>
+            <point key="canvasLocation" x="1511" y="1138"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="cG0-wP-MjU">
@@ -132,7 +132,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pEX-Hq-NAG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1399" y="393"/>
+            <point key="canvasLocation" x="1103" y="302"/>
+        </scene>
+        <!--Login View Controller-->
+        <scene sceneID="yMh-AR-mBf">
+            <objects>
+                <viewController id="jKf-CE-eNp" customClass="LoginViewController" customModule="TutorMe" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wuX-h5-GPh"/>
+                        <viewControllerLayoutGuide type="bottom" id="PgL-oo-hZ6"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bdz-NB-H2e">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="R0P-Lz-3eU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1812" y="302"/>
         </scene>
     </scenes>
 </document>

@@ -8,7 +8,7 @@
 
 import UIKit
 import PagingMenuController
-//import BTNavigationDropdownMenu
+import BTNavigationDropdownMenu
 
 extension UIApplication {
     class func topViewController(base: UIViewController? = UIApplication.shared.keyWindow?.rootViewController) -> UIViewController? {
@@ -84,7 +84,7 @@ private enum MenuSection {
 
 class PagingMenuViewController: UIViewController {
     var options: PagingMenuControllerCustomizable!
-    //var menuView: BTNavigationDropdownMenu!
+    var menuView: BTNavigationDropdownMenu!
     
     struct MenuItem1: MenuItemViewCustomizable {}
     struct MenuItem2: MenuItemViewCustomizable {}
@@ -114,7 +114,7 @@ class PagingMenuViewController: UIViewController {
         
         options = sectionType?.options
         
-        print(options)
+        createDropdown()
         
         // Do any additional setup after loading the view, typically from a nib.
         
@@ -139,18 +139,18 @@ class PagingMenuViewController: UIViewController {
         }
     }
     
-   /* func createDropdown() {
+    func createDropdown() {
         let items = ["About This App", "Settings", "Log Out"]
-        self.selectedCellLabel.text = items.first
+   
         self.navigationController?.navigationBar.isTranslucent = false
-        self.navigationController?.navigationBar.barTintColor = UIColor(red: 0.0/255.0, green:180/255.0, blue:220/255.0, alpha: 1.0)
+        self.navigationController?.navigationBar.barTintColor = UIColor(netHex: 0x51679F)
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
         
-        menuView = BTNavigationDropdownMenu(navigationController: self.navigationController, containerView: self.navigationController!.view, title: "Dropdown Menu", items: items as [AnyObject])
+        menuView = BTNavigationDropdownMenu(navigationController: self.navigationController, containerView: self.navigationController!.view, title: "TutorMe", items: items as [AnyObject])
         menuView.cellHeight = 50
         menuView.cellBackgroundColor = self.navigationController?.navigationBar.barTintColor
-        menuView.cellSelectionColor = UIColor(red: 0.0/255.0, green:160.0/255.0, blue:195.0/255.0, alpha: 1.0)
-        menuView.shouldKeepSelectedCellColor = true
+        menuView.cellSelectionColor = UIColor.flatSkyBlue
+        menuView.shouldKeepSelectedCellColor = false
         menuView.cellTextLabelColor = UIColor.white
         menuView.cellTextLabelFont = UIFont(name: "Avenir-Heavy", size: 17)
         menuView.cellTextLabelAlignment = .left // .Center // .Right // .Left
@@ -159,10 +159,18 @@ class PagingMenuViewController: UIViewController {
         menuView.maskBackgroundColor = UIColor.black
         menuView.maskBackgroundOpacity = 0.3
         menuView.didSelectItemAtIndexHandler = {(indexPath: Int) -> () in
-            print("Did select item at index: \(indexPath)")
-            self.selectedCellLabel.text = items[indexPath]
+            if indexPath == 0 {
+                let storyboard = UIStoryboard(name: "AboutThisApp", bundle: nil)
+                let controller = storyboard.instantiateViewController(withIdentifier: "aboutThisAppVC") as! AboutThisAppViewController
+                self.present(controller, animated: true, completion: nil)
+            } else if indexPath == 1 {
+                
+            } else if indexPath == 2 {
+                
+            }
+    
         }
         
         self.navigationItem.titleView = menuView
-    }*/
+    }
 }

@@ -16,6 +16,8 @@
 		C82800DC1E0EFD9700329B7D /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82800DB1E0EFD9700329B7D /* UIColorExtensions.swift */; };
 		C82800DE1E0EFDAF00329B7D /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82800DD1E0EFDAF00329B7D /* UIImageExtensions.swift */; };
 		C82800E11E0F4F7600329B7D /* Tutee.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C82800E01E0F4F7600329B7D /* Tutee.storyboard */; };
+		C82800E31E0FA38C00329B7D /* AboutThisApp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C82800E21E0FA38C00329B7D /* AboutThisApp.storyboard */; };
+		C82800E51E0FA96D00329B7D /* AboutThisAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82800E41E0FA96D00329B7D /* AboutThisAppViewController.swift */; };
 		C86ACAF21E0E238300F6695E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86ACAF11E0E238200F6695E /* LoginViewController.swift */; };
 		C87983981E0B90F0003EB7A1 /* WeekDaysCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C87983971E0B90F0003EB7A1 /* WeekDaysCell.xib */; };
 		C87984481E0B9760003EB7A1 /* ImagePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C879843F1E0B9760003EB7A1 /* ImagePickerController.swift */; };
@@ -96,6 +98,8 @@
 		C82800DB1E0EFD9700329B7D /* UIColorExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
 		C82800DD1E0EFDAF00329B7D /* UIImageExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtensions.swift; sourceTree = "<group>"; };
 		C82800E01E0F4F7600329B7D /* Tutee.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Tutee.storyboard; sourceTree = "<group>"; };
+		C82800E21E0FA38C00329B7D /* AboutThisApp.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AboutThisApp.storyboard; sourceTree = "<group>"; };
+		C82800E41E0FA96D00329B7D /* AboutThisAppViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutThisAppViewController.swift; sourceTree = "<group>"; };
 		C86ACAF11E0E238200F6695E /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C87983971E0B90F0003EB7A1 /* WeekDaysCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WeekDaysCell.xib; sourceTree = "<group>"; };
 		C879843F1E0B9760003EB7A1 /* ImagePickerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImagePickerController.swift; path = Example/CustomRows/ImageRow/ImagePickerController.swift; sourceTree = "<group>"; };
@@ -219,6 +223,8 @@
 				C87984B01E0CC00A003EB7A1 /* Tutor.storyboard */,
 				C82800E01E0F4F7600329B7D /* Tutee.storyboard */,
 				C87984AE1E0C8138003EB7A1 /* MenuViewController.storyboard */,
+				C82800E21E0FA38C00329B7D /* AboutThisApp.storyboard */,
+				C82800E41E0FA96D00329B7D /* AboutThisAppViewController.swift */,
 				C88498C11E0B5B4F000C4675 /* TutorOrTuteeViewController.swift */,
 				C88498C31E0B8A5C000C4675 /* TutorSignUpViewController.swift */,
 				96090AE91D9CDD2E00709CA6 /* SignUpViewController.swift */,
@@ -460,6 +466,7 @@
 				96090AF21D9CDD2E00709CA6 /* LaunchScreen.storyboard in Resources */,
 				C82800E11E0F4F7600329B7D /* Tutee.storyboard in Resources */,
 				96090AEF1D9CDD2E00709CA6 /* Assets.xcassets in Resources */,
+				C82800E31E0FA38C00329B7D /* AboutThisApp.storyboard in Resources */,
 				C87983981E0B90F0003EB7A1 /* WeekDaysCell.xib in Resources */,
 				C87984B31E0D013A003EB7A1 /* GoogleService-Info.plist in Resources */,
 				C88498CA1E0B8C16000C4675 /* EurekaSectionHeader.xib in Resources */,
@@ -538,6 +545,7 @@
 				C8EE885A1E0DB144003775C2 /* FSCalendarDelegationFactory.m in Sources */,
 				C87984931E0C763F003EB7A1 /* MenuView.swift in Sources */,
 				C8EE88631E0DB256003775C2 /* CalendarViewController.swift in Sources */,
+				C82800E51E0FA96D00329B7D /* AboutThisAppViewController.swift in Sources */,
 				C88498C41E0B8A5D000C4675 /* TutorSignUpViewController.swift in Sources */,
 				C8EE88291E0D08DC003775C2 /* TutorsTableViewController.swift in Sources */,
 				C8EE88521E0DB144003775C2 /* FSCalendar+Deprecated.m in Sources */,

@@ -18,5 +18,5 @@ use_frameworks!
  pod 'FSCalendar'
  pod 'JSQMessagesViewController'
  pod 'SCLAlertView'
- 
+ pod 'BTNavigationDropdownMenu', :git => 'https://github.com/PhamBaTho/BTNavigationDropdownMenu.git', :branch => 'swift-3.0'
 end

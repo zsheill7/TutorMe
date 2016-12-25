@@ -68,11 +68,11 @@ class SignUpViewController: UIViewController {
                 if isTutor != nil {
                     if isTutor == true {
                         let mainStoryboard: UIStoryboard = UIStoryboard(name: "Tutor", bundle: nil)
-                        let viewController = mainStoryboard.instantiateViewController(withIdentifier: "tutorPagingMenuVC") as! PagingMenuViewController
+                        let viewController = mainStoryboard.instantiateViewController(withIdentifier: "tutorPagingMenuNC") as! UINavigationController
                         self.present(viewController, animated: true, completion: nil)
                     } else {
                         let mainStoryboard: UIStoryboard = UIStoryboard(name: "Tutee", bundle: nil)
-                        let viewController = mainStoryboard.instantiateViewController(withIdentifier: "tuteePagingMenuVC") as! PagingMenuViewController
+                        let viewController = mainStoryboard.instantiateViewController(withIdentifier: "tuteePagingMenu NC") as! UINavigationController
                         self.present(viewController, animated: true, completion: nil)
                     }
                 }

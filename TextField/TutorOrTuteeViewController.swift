@@ -125,11 +125,21 @@ class TutorOrTuteeViewController: UIViewController {
        @IBAction func studentTapped(_ sender: Any) {
         print("tapped")
         self.ref.child("users/\(user.uid)/isTutor").setValue(false)
+        let userDefaults = UserDefaults.standard
+        userDefaults.setValue(false, forKey: "isTutor")
+        userDefaults.synchronize()
+ 
+        
         self.performSegue(withIdentifier: "toTuteeSignUpVC", sender: self)
     }
     @IBAction func tutorTapped(_ sender: Any) {
         print("tapped")
         self.ref.child("users/\(user.uid)/isTutor").setValue(true)
+        let userDefaults = UserDefaults.standard
+        userDefaults.setValue(true, forKey: "isTutor")
+        
+        userDefaults.synchronize()
+        
         self.performSegue(withIdentifier: "toTutorSignUpVC", sender: self)
     }
     

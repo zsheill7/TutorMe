@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Ed7-fB-gXO">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="rmb-qr-dQ6">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -35,10 +35,11 @@
                             <constraint firstAttribute="trailing" secondItem="HTK-m4-zgN" secondAttribute="trailing" id="um3-ZF-uuG"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="xdf-NT-v0z"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VRW-LB-2l5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="88.799999999999997" y="259.52023988005999"/>
+            <point key="canvasLocation" x="1028" y="259.52023988005999"/>
         </scene>
         <!--Paging Menu Controller-->
         <scene sceneID="4JT-XW-eYb">
@@ -55,7 +56,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IBK-rb-gNY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1139" y="230"/>
+            <point key="canvasLocation" x="2077.5999999999999" y="229.38530734632684"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ojl-PB-xeH">
+            <objects>
+                <navigationController storyboardIdentifier="tutorPagingMenuNC" automaticallyAdjustsScrollViewInsets="NO" id="rmb-qr-dQ6" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="woj-JG-6mC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Ed7-fB-gXO" kind="relationship" relationship="rootViewController" id="MgR-gK-YQ1"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IwN-W6-VKU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="88.799999999999997" y="259.52023988005999"/>
         </scene>
     </scenes>
 </document>

@@ -14,7 +14,28 @@ import SCLAlertView
 
 
 
-
+extension UIView {
+    func addBackground(imageName: String) {
+        // screen width and height:
+        let width = UIScreen.main.bounds.size.width
+        let height = UIScreen.main.bounds.size.height
+        
+        let newWidth = height * 2.0
+        
+        //let rect = CGRect(origin: CGPoint(x: -newWidth / 2,y : 0), size: CGSize(width: newWidth, height: height * 1.75))
+        //let rect = CGRect(origin: CGPoint(x: -newWidth / 2 + 400,y : 0), size: CGSize(width: newWidth, height: height * 2))
+        let rect = CGRect(origin: CGPoint(x: -newWidth / 2 - 100,y : 0), size: CGSize(width: newWidth, height: height * 1.2))
+        
+        let imageViewBackground = UIImageView(frame: rect)
+        imageViewBackground.image = UIImage(named: imageName)
+        
+        // you can change the content mode:
+        imageViewBackground.contentMode = UIViewContentMode.scaleAspectFill
+        
+        self.addSubview(imageViewBackground)
+        self.sendSubview(toBack: imageViewBackground)
+    }
+}
 
 class SignUpViewController: UIViewController {
     private var nameField: TextField!
@@ -43,12 +64,17 @@ class SignUpViewController: UIViewController {
             ref.child("users").child(currentUserUID!).observeSingleEvent(of: .value, with: { (snapshot) in
                 // Get user value
                 let value = snapshot.value as? NSDictionary
-                let isTutor = value?["isTutor"] as? String ?? ""
+                let isTutor = value?["isTutor"] as? Bool
                 if isTutor != nil {
-                    let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                    let viewController = mainStoryboard.instantiateViewController(withIdentifier: "tabBarController") as! UITabBarController
-                    UIApplication.shared.keyWindow?.rootViewController = viewController
-                    mainStoryboard.instantiateViewController(withIdentifier: "tabBarController")
+                    if isTutor == true {
+                        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Tutor", bundle: nil)
+                        let viewController = mainStoryboard.instantiateViewController(withIdentifier: "tutorPagingMenuVC") as! PagingMenuViewController
+                        self.present(viewController, animated: true, completion: nil)
+                    } else {
+                        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Tutee", bundle: nil)
+                        let viewController = mainStoryboard.instantiateViewController(withIdentifier: "tuteePagingMenuVC") as! PagingMenuViewController
+                        self.present(viewController, animated: true, completion: nil)
+                    }
                 }
                 
                 // ...
@@ -63,11 +89,20 @@ class SignUpViewController: UIViewController {
         }
         
        
-        self.view.backgroundColor = UIColor.init(
+        /*self.view.backgroundColor = UIColor.init(
             gradientStyle: UIGradientStyle.leftToRight,
             withFrame: self.view.frame,
-            andColors: [ Color.blue.lighten4.lighten(byPercentage: 0.2)!, Color.blue.lighten4.lighten(byPercentage: 0.2)! ]
-        )
+            andColors: [ Color.blue.lighten4, Color.blue.lighten4 ]
+        )*/
+        /*UIGraphicsBeginImageContext(self.view.frame.size)
+        UIImage(named: "blur-images-18")?.draw(in: self.view.bounds)*/
+        self.view.addBackground(imageName: "mixed2")
+        //self.view.backgroundColor = UIColor.newSkyBlue()
+        /*var image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        
+        UIGraphicsEndImageContext()
+        
+        self.view.backgroundColor = UIColor(patternImage: image)*/
         
         RZTransitionsManager.shared().defaultPresentDismissAnimationController = RZZoomAlphaAnimationController()
         RZTransitionsManager.shared().defaultPushPopAnimationController = RZCardSlideAnimationController()
@@ -78,6 +113,7 @@ class SignUpViewController: UIViewController {
         prepareConfirmPasswordField()
         prepareNextButton()
         prepareForgotPasswordButton()
+        prepareLoginButton()
     }
     
     func createAccount() {
@@ -139,7 +175,7 @@ class SignUpViewController: UIViewController {
         //let btn = RaisedButton(title: "Forgot Password?", titleColor: UIColor.textGray())
         
         let btn: UIButton! = UIButton()
-        btn.setTitleColor(UIColor.textGray(), for: .normal)
+        btn.setTitleColor(UIColor.darkGray, for: .normal)
         btn.setTitleColor(UIColor.flatBlue, for: .highlighted)
         btn.titleLabel!.font =  UIFont(name: "HelveticaNeue", size: 16)
         //btn.title = "Forgot Password?"
@@ -147,6 +183,19 @@ class SignUpViewController: UIViewController {
         btn.addTarget(self, action: #selector(handleForgotPasswordButton(button:)), for: .touchUpInside)
         
         view.layout(btn).width(150).height(constant).top(15 * constant).centerHorizontally()    }
+    
+    private func prepareLoginButton() {
+        //let btn = RaisedButton(title: "Forgot Password?", titleColor: UIColor.textGray())
+        
+        let btn: UIButton! = UIButton()
+        btn.setTitleColor(UIColor.darkGray, for: .normal)
+        btn.setTitleColor(UIColor.flatBlue, for: .highlighted)
+        btn.titleLabel!.font =  UIFont(name: "HelveticaNeue", size: 16)
+        
+        btn.setTitle("Already Registered? Log In", for: UIControlState.normal)
+        btn.addTarget(self, action: #selector(handleLogInButton(button:)), for: .touchUpInside)
+        
+        view.layout(btn).width(210).height(constant).top(16 * constant).centerHorizontally()    }
 
     
     //
@@ -166,6 +215,14 @@ class SignUpViewController: UIViewController {
         //SCLAlertView().showInfo("Hello Info", subTitle: "This is a more descriptive info text.") // Info
         print("hello")
         createForgotPasswordAlert()
+    }
+    internal func handleLogInButton(button: UIButton) {
+        //SCLAlertView().showInfo("Hello Info", subTitle: "This is a more descriptive info text.") // Info
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "loginNC") as! UINavigationController
+        self.present(controller, animated: true, completion: nil)
+        
+        //createForgotPasswordAlert()
     }
     
     func createForgotPasswordAlert() {
@@ -225,6 +282,8 @@ class SignUpViewController: UIViewController {
     
     private func prepareNameField() {
         nameField = TextField()
+        //nameField.addBackground(imageName: "Rectangle 8")
+        //nameField.background = UIImage(named: "Rectangle 8")
         nameField.placeholder = "Name"
         //nameField.detail = "Your given name"
         nameField.isClearIconButtonEnabled = true

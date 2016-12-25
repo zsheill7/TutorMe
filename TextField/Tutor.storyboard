@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Paging Menu View Controller-->
+        <!--tutorPagingMenuVC-->
         <scene sceneID="MDr-TF-kMT">
             <objects>
-                <viewController id="Ed7-fB-gXO" customClass="PagingMenuViewController" customModule="TutorMe" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="tutorPagingMenuVC" title="tutorPagingMenuVC" id="Ed7-fB-gXO" customClass="PagingMenuViewController" customModule="TutorMe" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0Sx-YY-ElH"/>
                         <viewControllerLayoutGuide type="bottom" id="ySS-Gi-Zeq"/>

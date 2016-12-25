@@ -10,6 +10,9 @@ import UIKit
 import Material
 import Spring
 import ChameleonFramework
+import Firebase
+import FirebaseDatabase
+
 class TutorOrTuteeViewController: UIViewController {
 
 
@@ -21,13 +24,24 @@ class TutorOrTuteeViewController: UIViewController {
     var selectedX: CGFloat = 0
     var centerX: CGFloat = 0
     var centerY: CGFloat = 0
+    
+    
+    var ref: FIRDatabaseReference!
+    var user: FIRUser!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.init(
-            gradientStyle: UIGradientStyle.topToBottom,
-            withFrame: self.view.frame,
-            andColors: [ Color.blue.lighten5, Color.blue.lighten4 ]
-        )
+        if let tempUser = FIRAuth.auth()?.currentUser {
+            user = tempUser
+        } else {
+            // No user is signed in.
+            // ...
+        }
+        
+        self.view.addBackground(imageName: "mixed2")
+        
+        ref = FIRDatabase.database().reference()
         
         centerX = CGFloat(self.view.frame.width / 2)
         centerY = CGFloat(self.view.frame.height / 2)
@@ -110,10 +124,12 @@ class TutorOrTuteeViewController: UIViewController {
     
        @IBAction func studentTapped(_ sender: Any) {
         print("tapped")
+        self.ref.child("users/\(user.uid)/isTutor").setValue(false)
         self.performSegue(withIdentifier: "toTuteeSignUpVC", sender: self)
     }
     @IBAction func tutorTapped(_ sender: Any) {
         print("tapped")
+        self.ref.child("users/\(user.uid)/isTutor").setValue(true)
         self.performSegue(withIdentifier: "toTutorSignUpVC", sender: self)
     }
     

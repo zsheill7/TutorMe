@@ -374,8 +374,8 @@ class CustomCellsController : FormViewController {
                         }
                 }
                 
-                
                 +++ Section()
+            
                 <<< ButtonRow() {
                     $0.title = "NEXT"
                     }

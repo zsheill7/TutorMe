@@ -9,8 +9,9 @@
 import UIKit
 //import Eureka
 import Material
-import ChameleonFramework
+//import ChameleonFramework
 import SwiftForms
+import SCLAlertView
 
 private enum MenuSection {
     case all(content: AllContent)
@@ -108,11 +109,7 @@ class TutorSignUpViewController: FormViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.init(
-            gradientStyle: UIGradientStyle.topToBottom,
-            withFrame: self.view.frame,
-            andColors: [ Color.blue.lighten5, Color.blue.lighten4 ]
-        )
+        
         // Do any additional setup after loading the view.
     }
 
@@ -298,18 +295,18 @@ class TutorSignUpViewControllerOne : FormViewController {
         row.configuration.button.didSelectClosure = { _ in
             self.view.endEditing(true)
            if let zipcode = self.form.sections[0].rows[0].value,
-            let schoolName = self.form.sections[0].rows[1].value,
-            let phone    = self.form.sections[0].rows[2].value,
-            let gender    = self.form.sections[1].rows[0].value,
-            let birthday    = self.form.sections[1].rows[1].value,
-            let preferredSubject = self.form.sections[1].rows[0].value,
-            let description = self.form.sections[0].rows[0].value {
-                
+            let schoolName = self.form.sections[1].rows[0].value,
+            let phone    = self.form.sections[1].rows[1].value,
+            let gender    = self.form.sections[2].rows[0].value,
+            let birthday    = self.form.sections[2].rows[1].value,
+            let preferredSubject = self.form.sections[2].rows[2].value,
+            let description = self.form.sections[3].rows[0].value {
+                self.performSegue(withIdentifier: "toSecondVC", sender: self)
            } else {
-                self.displayAlert(title: "Oops!", message: "Please fill out every section.")
+                self.displayAlert(title: "Error", message: "Please fill out every section.")
             }
             
-            self.performSegue(withIdentifier: "toSecondVC", sender: self)
+            
         }
         section5.rows.append(row)
         

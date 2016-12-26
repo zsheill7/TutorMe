@@ -9,6 +9,8 @@
 import UIKit
 import PagingMenuController
 import BTNavigationDropdownMenu
+import FirebaseAuth
+import Firebase
 
 extension UIApplication {
     class func topViewController(base: UIViewController? = UIApplication.shared.keyWindow?.rootViewController) -> UIViewController? {
@@ -158,15 +160,22 @@ class PagingMenuViewController: UIViewController {
         menuView.animationDuration = 0.5
         menuView.maskBackgroundColor = UIColor.black
         menuView.maskBackgroundOpacity = 0.3
+        
         menuView.didSelectItemAtIndexHandler = {(indexPath: Int) -> () in
             if indexPath == 0 {
+                self.modalTransitionStyle = .flipHorizontal
                 let storyboard = UIStoryboard(name: "AboutThisApp", bundle: nil)
                 let controller = storyboard.instantiateViewController(withIdentifier: "aboutThisAppVC") as! AboutThisAppViewController
+                controller.modalTransitionStyle = .flipHorizontal
                 self.present(controller, animated: true, completion: nil)
+                //self.performSegue(withIdentifier: "toAboutThisApp", sender: self)
             } else if indexPath == 1 {
                 
             } else if indexPath == 2 {
-                
+                try! FIRAuth.auth()!.signOut()
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let controller = storyboard.instantiateViewController(withIdentifier: "signupNC") as! UINavigationController
+                self.present(controller, animated: true, completion: nil)
             }
     
         }

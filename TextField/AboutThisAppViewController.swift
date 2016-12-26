@@ -10,17 +10,32 @@ import UIKit
 import Firebase
 import FirebaseDatabase
 
-var currentUserIsTutor: Bool?
+
 
 class AboutThisAppViewController: UIViewController {
-    var isTutor: Bool?
+    var currentUserIsTutor: Bool?
     var ref: FIRDatabaseReference!
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
          self.view.addBackground(imageName: "mixed2")
-        // Do any additional setup after loading the view.
+        let userDefaults = UserDefaults.standard
+        if let tempIsTutor = userDefaults.value(forKey: "isTutor") as? Bool {
+            currentUserIsTutor = tempIsTutor
+        } else {
+            let userID = FIRAuth.auth()?.currentUser?.uid
+            ref = FIRDatabase.database().reference()
+            
+            ref.child("users").child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in
+                // Get user value
+                let value = snapshot.value as? NSDictionary
+                self.currentUserIsTutor = value?["isTutor"] as? Bool
+                // ...
+            }) { (error) in
+                print(error.localizedDescription)
+            }
+            
+        }
         
     }
 
@@ -30,20 +45,9 @@ class AboutThisAppViewController: UIViewController {
     }
     
     @IBAction func pressedOkay(_ sender: Any) {
-        let userID = FIRAuth.auth()?.currentUser?.uid
-        ref = FIRDatabase.database().reference()
         
-        ref.child("users").child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in
-            // Get user value
-            let value = snapshot.value as? NSDictionary
-            self.isTutor = value?["isTutor"] as? Bool
-            // ...
-        }) { (error) in
-            print(error.localizedDescription)
-        }
-        
-        if isTutor != nil {
-            if isTutor == true {
+        if currentUserIsTutor != nil {
+            if currentUserIsTutor == true {
                 let storyboard = UIStoryboard(name: "Tutor", bundle: nil)
                 let controller = storyboard.instantiateViewController(withIdentifier: "tutorPagingMenuNC") as! UINavigationController
                 self.present(controller, animated: true, completion: nil)
@@ -52,6 +56,10 @@ class AboutThisAppViewController: UIViewController {
                 let controller = storyboard.instantiateViewController(withIdentifier: "tuteePagingMenuNC") as! UINavigationController
                 self.present(controller, animated: true, completion: nil)
             }
+        } else {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let controller = storyboard.instantiateViewController(withIdentifier: "signupNC") as! UINavigationController
+            self.present(controller, animated: true, completion: nil)
         }
 
     }

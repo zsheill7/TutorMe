@@ -133,7 +133,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pEX-Hq-NAG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2040.8" y="301.79910044977515"/>
+            <point key="canvasLocation" x="1002" y="178"/>
         </scene>
         <!--Welcome-->
         <scene sceneID="yMh-AR-mBf">
@@ -149,17 +149,20 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Welcome" id="xwO-Sm-AOc"/>
+                    <connections>
+                        <segue destination="f1O-17-5Nh" kind="show" identifier="goToTutorOrTutee" id="e38-Qo-rrt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R0P-Lz-3eU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3690.4000000000001" y="301.79910044977515"/>
+            <point key="canvasLocation" x="2303" y="178"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="5l0-M8-h6n">
             <objects>
                 <navigationController storyboardIdentifier="loginNC" automaticallyAdjustsScrollViewInsets="NO" id="1kV-iB-SjC" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="TX5-wN-JVX">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="TX5-wN-JVX">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -170,14 +173,14 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zxE-ul-4mc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2751.1999999999998" y="301.79910044977515"/>
+            <point key="canvasLocation" x="1634" y="178"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="TcH-Zn-r8C">
             <objects>
                 <navigationController storyboardIdentifier="signupNC" automaticallyAdjustsScrollViewInsets="NO" id="eDQ-NE-3k0" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="maU-b1-d8V">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="maU-b1-d8V">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -188,7 +191,10 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ad4-UE-B7n" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1101.5999999999999" y="301.79910044977515"/>
+            <point key="canvasLocation" x="306" y="178"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="e38-Qo-rrt"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -8,6 +8,14 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Storyboard Reference-->
+        <scene sceneID="Glo-La-UPg">
+            <objects>
+                <viewControllerPlaceholder id="D2A-iq-uJb" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4yE-sV-dHQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="825" y="677"/>
+        </scene>
         <!--tutorPagingMenuVC-->
         <scene sceneID="MDr-TF-kMT">
             <objects>
@@ -36,6 +44,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="xdf-NT-v0z"/>
+                    <connections>
+                        <segue destination="D2A-iq-uJb" kind="presentation" identifier="toAboutThisApp" modalTransitionStyle="flipHorizontal" id="ZnZ-IK-W4z"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VRW-LB-2l5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

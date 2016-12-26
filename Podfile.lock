@@ -64,7 +64,7 @@ PODS:
 DEPENDENCIES:
   - BTNavigationDropdownMenu (from `https://github.com/PhamBaTho/BTNavigationDropdownMenu.git`, branch `swift-3.0`)
   - ChameleonFramework/Swift (from `https://github.com/ViccAlexander/Chameleon.git`)
-  - Eureka (~> 2.0.0-beta.1)
+  - Eureka (from `https://github.com/xmartlabs/Eureka.git`)
   - Firebase/Auth
   - Firebase/Core
   - Firebase/Database
@@ -83,6 +83,8 @@ EXTERNAL SOURCES:
     :git: https://github.com/PhamBaTho/BTNavigationDropdownMenu.git
   ChameleonFramework:
     :git: https://github.com/ViccAlexander/Chameleon.git
+  Eureka:
+    :git: https://github.com/xmartlabs/Eureka.git
   Spring:
     :branch: swift3
     :git: https://github.com/MengTo/Spring.git
@@ -94,6 +96,9 @@ CHECKOUT OPTIONS:
   ChameleonFramework:
     :commit: dcf98f9bf3a632a7f40679b7da46f09681e48526
     :git: https://github.com/ViccAlexander/Chameleon.git
+  Eureka:
+    :commit: 9f8af8af3d71a2b4428e1cde7105af1a5b4656b4
+    :git: https://github.com/xmartlabs/Eureka.git
   Spring:
     :commit: 3a9227c6e9157e7b47f5ac1ee5abab2a56b50002
     :git: https://github.com/MengTo/Spring.git
@@ -122,6 +127,6 @@ SPEC CHECKSUMS:
   SCLAlertView: 8a14ffc40590c619e183eed2298b854385f30be1
   Spring: 3f02b5dc3308572ef177b3cad0fa7bbc4b0706f7
 
-PODFILE CHECKSUM: 3d410e04b4d208d76f8cbd5ab9625637531faf3e
+PODFILE CHECKSUM: 5b285e790051303f1e3d70aab7c71e5a49d3b514
 
 COCOAPODS: 1.2.0.beta.1

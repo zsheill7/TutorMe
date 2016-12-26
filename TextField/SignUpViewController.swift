@@ -118,13 +118,13 @@ class SignUpViewController: UIViewController {
     
     func createAccount() {
         if emailField.text == "" || nameField.text == "" || passwordField.text == "" || confirmPasswordField.text == "" {
-            displayAlert(title: "Error", message: "Please complete all fields")
+            displayAlert(title: "Oops!", message: "Please complete all fields")
             
         } else if emailField.text?.isEmail() == false{
-            displayAlert(title: "Error", message: "\"\(emailField.text!)\" is not a valid email address")
+            displayAlert(title: "Oops!", message: "\"\(emailField.text!)\" is not a valid email address")
         
-        } else if passwordField.text!.characters.count < 5 {
-            self.displayAlert(title: "Not Long Enough", message: "Please enter a password that is 5 or more characters")
+        } else if passwordField.text!.characters.count < 6 {
+            self.displayAlert(title: "Not Long Enough", message: "Please enter a password that is 6 or more characters")
         } else if passwordField.text != confirmPasswordField.text {
             self.displayAlert(title: "Passwords Do Not Match", message: "Please re-enter passwords")
         } else {
@@ -220,6 +220,7 @@ class SignUpViewController: UIViewController {
         //SCLAlertView().showInfo("Hello Info", subTitle: "This is a more descriptive info text.") // Info
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let controller = storyboard.instantiateViewController(withIdentifier: "loginNC") as! UINavigationController
+        controller.modalTransitionStyle = .flipHorizontal
         self.present(controller, animated: true, completion: nil)
         
         //createForgotPasswordAlert()
@@ -244,7 +245,7 @@ class SignUpViewController: UIViewController {
         let emailButton = alert.addButton("Send Email") {
             if emailTextField.text != nil {
                 if emailTextField.text?.isEmail() == false {
-                    SCLAlertView().showInfo("Error", subTitle: "Please enter a valid email.")
+                    SCLAlertView().showInfo("Oops!", subTitle: "Please enter a valid email.")
                 } else {
                 FIRAuth.auth()?.sendPasswordReset(withEmail: emailTextField.text!, completion: { (error) in
                     var title = ""
@@ -345,7 +346,7 @@ class SignUpViewController: UIViewController {
     private func prepareConfirmPasswordField() {
         confirmPasswordField = TextField()
         confirmPasswordField.placeholder = "Confirm Password"
-        confirmPasswordField.detail = "At least 5 characters"
+        confirmPasswordField.detail = "At least 6 characters"
         confirmPasswordField.clearButtonMode = .whileEditing
         confirmPasswordField.isVisibilityIconButtonEnabled = true
         

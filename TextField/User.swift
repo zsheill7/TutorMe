@@ -13,12 +13,13 @@ import FirebaseDatabase
 struct User {
     let uid:String
     let email:String
-    let address:String
     let name:String
+    let isTutor: Bool
+    
+    let address:String
     let age: Int
     let school: String
     let description: String
-    let isTutor: Bool
     let languages: [String]
     let availableDays: [Bool]
     

@@ -15,14 +15,15 @@ struct User {
     let email:String
     let name:String
     let isTutor: Bool
-    
-    let address:String
     let age: Int
-    let school: String
     let description: String
+    let phone: String
+    let address:String
+    let school: String
+    
     let languages: [String]
     let availableDays: [Bool]
-    
+    let preferredSubjects: [Bool]
     /*
      
      uid
@@ -47,6 +48,8 @@ struct User {
         address = ""
         availableDays = [false]
         school = ""
+        phone = ""
+        preferredSubjects = [false, false, false]
         
         if let mail = userData.providerData.first?.email {
             email = mail
@@ -117,10 +120,20 @@ struct User {
         } else {
             age = 0
         }
+        if let userPhone = snapshotValue?["phone"] as? String {
+            phone = userPhone
+        } else {
+            phone = ""
+        }
+        if let userSubject = snapshotValue?["preferredSubject"] as? [Bool] {
+            preferredSubjects = userSubject
+        } else {
+            preferredSubjects = [false, false, false]
+        }
         
     }
     
-    init (uid: String, email: String, name: String, school: String, isTutor: Bool, address: String, age: Int, description: String, languages: [String], availableDays: [Bool]) {
+    init (uid: String, email: String, name: String, school: String, isTutor: Bool, address: String, age: Int, description: String, languages: [String], availableDays: [Bool], phone: String, preferredSubjects: [Bool]) {
         self.uid = uid
         self.email = email
         self.address = address
@@ -131,5 +144,7 @@ struct User {
         self.languages = languages
         self.availableDays = availableDays
         self.school = school
+        self.phone = phone
+        self.preferredSubjects = preferredSubjects
     }
 }

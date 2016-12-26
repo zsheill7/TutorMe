@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Eureka
+//import Eureka
 import Material
 import ChameleonFramework
 import SwiftForms
@@ -21,30 +21,7 @@ private enum MenuSection {
     fileprivate enum MenuViewContent: Int { case underline, roundRect }
     fileprivate enum MenuControllerContent: Int { case standard }
     
-    struct Static {
-        static let nameTag = "name"
-        static let passwordTag = "password"
-        static let lastNameTag = "lastName"
-        static let jobTag = "job"
-        static let emailTag = "email"
-        static let URLTag = "url"
-        static let phoneTag = "phone"
-        static let enabled = "enabled"
-        static let check = "check"
-        static let segmented = "segmented"
-        static let picker = "picker"
-        static let birthday = "birthday"
-        static let categories = "categories"
-        static let button = "button"
-        static let stepper = "stepper"
-        static let slider = "slider"
-        static let textView = "textview"
-    }
     
-    required init(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        self.loadForm()
-    }
 
     
     init?(indexPath: IndexPath) {
@@ -128,6 +105,7 @@ enum EventState {
 
 class TutorSignUpViewController: FormViewController {
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.init(
@@ -157,11 +135,35 @@ class TutorSignUpViewController: FormViewController {
 }
 
 class TutorSignUpViewControllerOne : FormViewController {
+    struct Static {
+        static let nameTag = "name"
+        static let passwordTag = "password"
+        static let lastNameTag = "lastName"
+        static let jobTag = "job"
+        static let emailTag = "email"
+        static let URLTag = "url"
+        static let phoneTag = "phone"
+        static let enabled = "enabled"
+        static let check = "check"
+        static let segmented = "segmented"
+        static let picker = "picker"
+        static let birthday = "birthday"
+        static let categories = "categories"
+        static let button = "button"
+        static let stepper = "stepper"
+        static let slider = "slider"
+        static let textView = "textview"
+    }
+    
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        self.loadForm()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        initializeForm()
+        //initializeForm()
         
         
         
@@ -184,6 +186,7 @@ class TutorSignUpViewControllerOne : FormViewController {
     }
     
     // MARK: Private interface
+    
     
     fileprivate func loadForm() {
         
@@ -209,13 +212,13 @@ class TutorSignUpViewControllerOne : FormViewController {
         row.configuration.cell.appearance = ["textField.placeholder" : "e.g. Ortuño" as AnyObject, "textField.textAlignment" : NSTextAlignment.right.rawValue as AnyObject]
         section2.rows.append(row)
         
-        row = FormRowDescriptor(tag: Static.jobTag, type: .text, title: "Job")
+        row = FormRowDescriptor(tag: Static.jobTag, type: .text, title: "Address")
         row.configuration.cell.appearance = ["textField.placeholder" : "e.g. Entrepreneur" as AnyObject, "textField.textAlignment" : NSTextAlignment.right.rawValue as AnyObject]
         section2.rows.append(row)
         
         let section3 = FormSectionDescriptor(headerTitle: nil, footerTitle: nil)
         
-        row = FormRowDescriptor(tag: Static.URLTag, type: .url, title: "URL")
+        row = FormRowDescriptor(tag: Static.URLTag, type: .url, title: "School Name")
         row.configuration.cell.appearance = ["textField.placeholder" : "e.g. gethooksapp.com" as AnyObject, "textField.textAlignment" : NSTextAlignment.right.rawValue as AnyObject]
         section3.rows.append(row)
         
@@ -223,37 +226,7 @@ class TutorSignUpViewControllerOne : FormViewController {
         row.configuration.cell.appearance = ["textField.placeholder" : "e.g. 0034666777999" as AnyObject, "textField.textAlignment" : NSTextAlignment.right.rawValue as AnyObject]
         section3.rows.append(row)
         
-        let section4 = FormSectionDescriptor(headerTitle: "An example header title", footerTitle: "An example footer title")
-        
-        row = FormRowDescriptor(tag: Static.enabled, type: .booleanSwitch, title: "Enable")
-        section4.rows.append(row)
-        
-        row = FormRowDescriptor(tag: Static.check, type: .booleanCheck, title: "Doable")
-        section4.rows.append(row)
-        
-        row = FormRowDescriptor(tag: Static.segmented, type: .segmentedControl, title: "Priority")
-        row.configuration.selection.options = ([0, 1, 2, 3] as [Int]) as [AnyObject]
-        row.configuration.selection.optionTitleClosure = { value in
-            guard let option = value as? Int else { return "" }
-            switch option {
-            case 0:
-                return "None"
-            case 1:
-                return "!"
-            case 2:
-                return "!!"
-            case 3:
-                return "!!!"
-            default:
-                return ""
-            }
-        }
-        
-        row.configuration.cell.appearance = ["titleLabel.font" : UIFont.boldSystemFont(ofSize: 30.0), "segmentedControl.tintColor" : UIColor.red]
-        
-        section4.rows.append(row)
-        
-        let section5 = FormSectionDescriptor(headerTitle: nil, footerTitle: nil)
+        let section5 = FormSectionDescriptor(headerTitle: "An example header title", footerTitle: nil)
         
         row = FormRowDescriptor(tag: Static.picker, type: .picker, title: "Gender")
         row.configuration.cell.showsInputToolbar = true
@@ -280,132 +253,49 @@ class TutorSignUpViewControllerOne : FormViewController {
         row.configuration.cell.showsInputToolbar = true
         section5.rows.append(row)
         
-        row = FormRowDescriptor(tag: Static.categories, type: .multipleSelector, title: "Categories")
+        row = FormRowDescriptor(tag: Static.categories, type: .multipleSelector, title: "Preferred Subject")
         row.configuration.selection.options = ([0, 1, 2, 3, 4] as [Int]) as [AnyObject]
         row.configuration.selection.allowsMultipleSelection = true
+        
         row.configuration.selection.optionTitleClosure = { value in
             guard let option = value as? Int else { return "" }
             switch option {
             case 0:
-                return "Restaurant"
+                return "Math"
             case 1:
-                return "Pub"
+                return "Reading or writing"
             case 2:
-                return "Shop"
-            case 3:
-                return "Hotel"
-            case 4:
-                return "Camping"
+                return "Science"
+                
+                
             default:
                 return ""
             }
         }
         
         section5.rows.append(row)
+
         
-        let section6 = FormSectionDescriptor(headerTitle: "Stepper & Slider", footerTitle: nil)
+       
         
-        row = FormRowDescriptor(tag: Static.stepper, type: .stepper, title: "Step count")
-        row.configuration.stepper.maximumValue = 200.0
-        row.configuration.stepper.minimumValue = 20.0
-        row.configuration.stepper.steps = 2.0
-        section6.rows.append(row)
-        
-        row = FormRowDescriptor(tag: Static.slider, type: .slider, title: "Slider")
-        row.configuration.stepper.maximumValue = 200.0
-        row.configuration.stepper.minimumValue = 20.0
-        row.configuration.stepper.steps = 2.0
-        row.value = 0.5 as AnyObject
-        section6.rows.append(row)
-        
-        let section7 = FormSectionDescriptor(headerTitle: "Multiline TextView", footerTitle: nil)
-        row = FormRowDescriptor(tag: Static.textView, type: .multilineText, title: "Notes")
+        let section7 = FormSectionDescriptor(headerTitle: "Description", footerTitle: nil)
+        row = FormRowDescriptor(tag: Static.textView, type: .multilineText, title: "About Me")
         section7.rows.append(row)
         
         let section8 = FormSectionDescriptor(headerTitle: nil, footerTitle: nil)
         
+        //row.configuration.cell.appearance = ["textField.placeholder" : "This will be a part of your profile. Tell us about yourself. What are your extracurriculars?  Do you have experience with working with children?" as AnyObject, "textField.textAlignment" : NSTextAlignment.right.rawValue as AnyObject]
         row = FormRowDescriptor(tag: Static.button, type: .button, title: "Dismiss")
         row.configuration.button.didSelectClosure = { _ in
             self.view.endEditing(true)
         }
         section8.rows.append(row)
         
-        form.sections = [section1, section2, section3, section4, section5, section6, section7, section8]
+        form.sections = [section1, section2, section3, section5, section7, section8]
         
         self.form = form
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        let sectionType = MenuSection(indexPath: NSIndexPath(row: 0, section: 0) as IndexPath)
-        let viewController = segue.destination as! PagingMenuViewController
-        
-        viewController.title = "Welcome"
-        viewController.options = sectionType?.options
-   
-    }
-}
-
-class TutorSignUpViewControllerTwo : FormViewController {
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        form +++
-            Section() {
-                var header = HeaderFooterView<EurekaLogoViewNib>(.nibFile(name: "EurekaSectionHeader", bundle: nil))
-                header.onSetupView = { (view, section) -> () in
-                    view.imageView.alpha = 0;
-                    UIView.animate(withDuration: 2.0, animations: { [weak view] in
-                        view?.imageView.alpha = 1
-                    })
-                    view.layer.transform = CATransform3DMakeScale(0.9, 0.9, 1)
-                    UIView.animate(withDuration: 1.0, animations: { [weak view] in
-                        view?.layer.transform = CATransform3DIdentity
-                    })
-                }
-                $0.header = header
-            }
-            +++ Section("WeekDay cell")
-            
-            <<< WeekDayRow(){
-                $0.value = [.monday, .wednesday, .friday]
-            }
-            
-            <<< TextFloatLabelRow() {
-                $0.title = "Float Label Row, type something to see.."
-            }
-            
-            <<< IntFloatLabelRow() {
-                $0.title = "Float Label Row, type something to see.."
-        }
-    }
 }
 
 
-class EurekaLogoViewNib: UIView {
-    
-    @IBOutlet weak var imageView: UIImageView!
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
-}
-
-class EurekaLogoView: UIView {
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        let imageView = UIImageView(image: UIImage(named: "Eureka"))
-        imageView.frame = CGRect(x: 0, y: 0, width: 320, height: 130)
-        imageView.autoresizingMask = .flexibleWidth
-        self.frame = CGRect(x: 0, y: 0, width: 320, height: 130)
-        imageView.contentMode = .scaleAspectFit
-        self.addSubview(imageView)
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-}
 

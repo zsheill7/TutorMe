@@ -135,20 +135,26 @@ class TutorSignUpViewController: FormViewController {
 }
 
 class TutorSignUpViewControllerOne : FormViewController {
+    
+    func displayAlert(title: String, message: String) {
+        SCLAlertView().showInfo(title, subTitle: message)
+        
+    }
+    
     struct Static {
         static let nameTag = "name"
         static let passwordTag = "password"
         static let lastNameTag = "lastName"
-        static let jobTag = "job"
+        static let zipcodeTag = "zipcode"
         static let emailTag = "email"
-        static let URLTag = "url"
+        static let schoolTag = "school"
         static let phoneTag = "phone"
         static let enabled = "enabled"
         static let check = "check"
         static let segmented = "segmented"
-        static let picker = "picker"
+        static let gender = "gender"
         static let birthday = "birthday"
-        static let categories = "categories"
+        static let subjects = "subjects"
         static let button = "button"
         static let stepper = "stepper"
         static let slider = "slider"
@@ -192,9 +198,11 @@ class TutorSignUpViewControllerOne : FormViewController {
         
         let form = FormDescriptor(title: "Example Form")
         
-        let section1 = FormSectionDescriptor(headerTitle: nil, footerTitle: nil)
-        
         var row = FormRowDescriptor(tag: Static.emailTag, type: .email, title: "Email")
+        
+        /*let section1 = FormSectionDescriptor(headerTitle: nil, footerTitle: nil)
+        
+        
         row.configuration.cell.appearance = ["textField.placeholder" : "john@gmail.com" as AnyObject, "textField.textAlignment" : NSTextAlignment.right.rawValue as AnyObject]
         section1.rows.append(row)
         
@@ -202,33 +210,35 @@ class TutorSignUpViewControllerOne : FormViewController {
         row.configuration.cell.appearance = ["textField.placeholder" : "Enter password" as AnyObject, "textField.textAlignment" : NSTextAlignment.right.rawValue as AnyObject]
         section1.rows.append(row)
         
-        let section2 = FormSectionDescriptor(headerTitle: nil, footerTitle: nil)
-        
+         
         row = FormRowDescriptor(tag: Static.nameTag, type: .name, title: "First Name")
         row.configuration.cell.appearance = ["textField.placeholder" : "e.g. Miguel Ángel" as AnyObject, "textField.textAlignment" : NSTextAlignment.right.rawValue as AnyObject]
         section2.rows.append(row)
         
         row = FormRowDescriptor(tag: Static.lastNameTag, type: .name, title: "Last Name")
         row.configuration.cell.appearance = ["textField.placeholder" : "e.g. Ortuño" as AnyObject, "textField.textAlignment" : NSTextAlignment.right.rawValue as AnyObject]
+        section2.rows.append(row)*/
+        
+        let section1 = FormSectionDescriptor(headerTitle: nil, footerTitle: nil)
+
+        
+        row = FormRowDescriptor(tag: Static.zipcodeTag, type: .text, title: "Zip Code")
+        row.configuration.cell.appearance = ["textField.placeholder" : "e.g. 98040" as AnyObject, "textField.textAlignment" : NSTextAlignment.right.rawValue as AnyObject]
+        section1.rows.append(row)
+        
+        let section2 = FormSectionDescriptor(headerTitle: nil, footerTitle: nil)
+        
+        row = FormRowDescriptor(tag: Static.schoolTag, type: .url, title: "School Name")
+        row.configuration.cell.appearance = ["textField.placeholder" : "e.g. Mercer Island High School" as AnyObject, "textField.textAlignment" : NSTextAlignment.right.rawValue as AnyObject]
         section2.rows.append(row)
-        
-        row = FormRowDescriptor(tag: Static.jobTag, type: .text, title: "Address")
-        row.configuration.cell.appearance = ["textField.placeholder" : "e.g. Entrepreneur" as AnyObject, "textField.textAlignment" : NSTextAlignment.right.rawValue as AnyObject]
-        section2.rows.append(row)
-        
-        let section3 = FormSectionDescriptor(headerTitle: nil, footerTitle: nil)
-        
-        row = FormRowDescriptor(tag: Static.URLTag, type: .url, title: "School Name")
-        row.configuration.cell.appearance = ["textField.placeholder" : "e.g. gethooksapp.com" as AnyObject, "textField.textAlignment" : NSTextAlignment.right.rawValue as AnyObject]
-        section3.rows.append(row)
         
         row = FormRowDescriptor(tag: Static.phoneTag, type: .phone, title: "Phone")
-        row.configuration.cell.appearance = ["textField.placeholder" : "e.g. 0034666777999" as AnyObject, "textField.textAlignment" : NSTextAlignment.right.rawValue as AnyObject]
-        section3.rows.append(row)
+        row.configuration.cell.appearance = ["textField.placeholder" : "e.g. 13069242633" as AnyObject, "textField.textAlignment" : NSTextAlignment.right.rawValue as AnyObject]
+        section2.rows.append(row)
         
-        let section5 = FormSectionDescriptor(headerTitle: "An example header title", footerTitle: nil)
+        let section3 = FormSectionDescriptor(headerTitle: "An example header title", footerTitle: nil)
         
-        row = FormRowDescriptor(tag: Static.picker, type: .picker, title: "Gender")
+        row = FormRowDescriptor(tag: Static.gender, type: .picker, title: "Gender")
         row.configuration.cell.showsInputToolbar = true
         row.configuration.selection.options = (["F", "M", "U"] as [String]) as [AnyObject]
         row.configuration.selection.optionTitleClosure = { value in
@@ -239,7 +249,7 @@ class TutorSignUpViewControllerOne : FormViewController {
             case "M":
                 return "Male"
             case "U":
-                return "I'd rather not to say"
+                return "Other/I'd rather not say"
             default:
                 return ""
             }
@@ -247,16 +257,15 @@ class TutorSignUpViewControllerOne : FormViewController {
         
         row.value = "M" as AnyObject
         
-        section5.rows.append(row)
+        section3.rows.append(row)
         
         row = FormRowDescriptor(tag: Static.birthday, type: .date, title: "Birthday")
         row.configuration.cell.showsInputToolbar = true
-        section5.rows.append(row)
+        section3.rows.append(row)
         
-        row = FormRowDescriptor(tag: Static.categories, type: .multipleSelector, title: "Preferred Subject")
-        row.configuration.selection.options = ([0, 1, 2, 3, 4] as [Int]) as [AnyObject]
+        row = FormRowDescriptor(tag: Static.subjects, type: .multipleSelector, title: "Preferred Subject")
+        row.configuration.selection.options = ([0, 1, 2] as [Int]) as [AnyObject]
         row.configuration.selection.allowsMultipleSelection = true
-        
         row.configuration.selection.optionTitleClosure = { value in
             guard let option = value as? Int else { return "" }
             switch option {
@@ -273,25 +282,38 @@ class TutorSignUpViewControllerOne : FormViewController {
             }
         }
         
-        section5.rows.append(row)
+        section3.rows.append(row)
 
         
        
         
-        let section7 = FormSectionDescriptor(headerTitle: "Description", footerTitle: nil)
+        let section4 = FormSectionDescriptor(headerTitle: "Description", footerTitle: nil)
         row = FormRowDescriptor(tag: Static.textView, type: .multilineText, title: "About Me")
-        section7.rows.append(row)
+        section4.rows.append(row)
         
-        let section8 = FormSectionDescriptor(headerTitle: nil, footerTitle: nil)
+        let section5 = FormSectionDescriptor(headerTitle: nil, footerTitle: nil)
         
         //row.configuration.cell.appearance = ["textField.placeholder" : "This will be a part of your profile. Tell us about yourself. What are your extracurriculars?  Do you have experience with working with children?" as AnyObject, "textField.textAlignment" : NSTextAlignment.right.rawValue as AnyObject]
-        row = FormRowDescriptor(tag: Static.button, type: .button, title: "Dismiss")
+        row = FormRowDescriptor(tag: Static.button, type: .button, title: "Continue")
         row.configuration.button.didSelectClosure = { _ in
             self.view.endEditing(true)
+           if let zipcode = self.form.sections[0].rows[0].value,
+            let schoolName = self.form.sections[0].rows[1].value,
+            let phone    = self.form.sections[0].rows[2].value,
+            let gender    = self.form.sections[1].rows[0].value,
+            let birthday    = self.form.sections[1].rows[1].value,
+            let preferredSubject = self.form.sections[1].rows[0].value,
+            let description = self.form.sections[0].rows[0].value {
+                
+           } else {
+                self.displayAlert(title: "Oops!", message: "Please fill out every section.")
+            }
+            
+            self.performSegue(withIdentifier: "toSecondVC", sender: self)
         }
-        section8.rows.append(row)
+        section5.rows.append(row)
         
-        form.sections = [section1, section2, section3, section5, section7, section8]
+        form.sections = [section1, section2, section3, section4, section5]
         
         self.form = form
     }

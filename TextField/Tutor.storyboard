@@ -43,7 +43,7 @@
                             <constraint firstAttribute="trailing" secondItem="HTK-m4-zgN" secondAttribute="trailing" id="um3-ZF-uuG"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="xdf-NT-v0z"/>
+                    <navigationItem key="navigationItem" title="More Info" id="xdf-NT-v0z"/>
                     <connections>
                         <segue destination="D2A-iq-uJb" kind="presentation" identifier="toAboutThisApp" modalTransitionStyle="flipHorizontal" id="ZnZ-IK-W4z"/>
                     </connections>

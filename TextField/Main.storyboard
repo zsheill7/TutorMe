@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Ezx-Lo-7mX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="r5a-IX-An8">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -31,13 +31,14 @@
                             <outlet property="delegate" destination="Ezx-Lo-7mX" id="e9j-N0-xIX"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="rse-7o-3yg"/>
                     <connections>
                         <segue destination="2XP-RT-pb8" kind="show" identifier="toSecondVC" id="ha2-mk-ba7"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h24-fb-nn7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="23" y="1221"/>
+            <point key="canvasLocation" x="960.79999999999995" y="1220.2398800599701"/>
         </scene>
         <!--Tutor-->
         <scene sceneID="EQF-AC-2xd">
@@ -119,12 +120,12 @@
                         <outlet property="ballView" destination="6mn-N7-jTL" id="TQ7-x4-0Ct"/>
                         <outlet property="ballView2" destination="9ys-69-rZ9" id="mEF-yN-G1I"/>
                         <segue destination="zlZ-Tz-VvW" kind="show" identifier="toTuteeSignUpVC" id="GTo-4u-K6u"/>
-                        <segue destination="Ezx-Lo-7mX" kind="show" identifier="toTutorSignUpVC" id="JkN-MB-NsO"/>
+                        <segue destination="r5a-IX-An8" kind="show" identifier="toTutorSignUpVC" id="JkN-MB-NsO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gHJ-44-Zss" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="845.60000000000002" y="900.89955022488766"/>
+            <point key="canvasLocation" x="1784.8" y="900.89955022488766"/>
         </scene>
         <!--TuteeVC-->
         <scene sceneID="E0p-wa-5BI">
@@ -142,7 +143,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oXh-dq-Zli" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1511" y="1138"/>
+            <point key="canvasLocation" x="2448.8000000000002" y="1137.481259370315"/>
         </scene>
         <!--Welcome-->
         <scene sceneID="cG0-wP-MjU">
@@ -223,6 +224,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ad4-UE-B7n" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="306" y="178"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="EKB-Xj-Ejl">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="r5a-IX-An8" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="2Ks-9t-bVe">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Ezx-Lo-7mX" kind="relationship" relationship="rootViewController" id="fdd-ML-l2N"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wIf-Es-uSf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="21.600000000000001" y="1220.2398800599701"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

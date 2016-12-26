@@ -8,14 +8,15 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Tutor Sign Up View Controller One-->
+        <!--More Info-->
         <scene sceneID="tbt-KE-e25">
             <objects>
                 <tableViewController id="Ezx-Lo-7mX" customClass="TutorSignUpViewControllerOne" customModule="TutorMe" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="UQN-Ik-6HD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="0.4379126320422535" colorSpace="calibratedWhite"/>
+                        <color key="sectionIndexBackgroundColor" white="1" alpha="0.79935079225352113" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="JuP-Ut-oE6">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
@@ -24,6 +25,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" white="1" alpha="0.5" colorSpace="calibratedWhite"/>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -31,9 +33,9 @@
                             <outlet property="delegate" destination="Ezx-Lo-7mX" id="e9j-N0-xIX"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="rse-7o-3yg"/>
+                    <navigationItem key="navigationItem" title="More Info" id="rse-7o-3yg"/>
                     <connections>
-                        <segue destination="2XP-RT-pb8" kind="show" identifier="toSecondVC" id="ha2-mk-ba7"/>
+                        <segue destination="Hs8-GW-Mvw" kind="show" identifier="toSecondVC" id="ha2-mk-ba7"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h24-fb-nn7" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -71,13 +73,14 @@
                             <outlet property="delegate" destination="2XP-RT-pb8" id="6bd-G4-Akg"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="eo3-wV-9Qe"/>
                     <connections>
                         <segue destination="X1N-CK-Yff" kind="show" identifier="toPagingMenuVC" id="SXW-We-vip"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xj4-KV-VtS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4" y="1907"/>
+            <point key="canvasLocation" x="935.20000000000005" y="1906.5967016491757"/>
         </scene>
         <!--Tutor Or Tutee View Controller-->
         <scene sceneID="2OA-Hw-Woh">
@@ -242,6 +245,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wIf-Es-uSf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="21.600000000000001" y="1220.2398800599701"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="7Sp-g1-goT">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Hs8-GW-Mvw" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="XuY-kb-cq3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="2XP-RT-pb8" kind="relationship" relationship="rootViewController" id="thl-r0-esG"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hGe-l9-fLr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-4" y="1906.5967016491757"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

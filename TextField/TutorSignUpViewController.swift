@@ -12,6 +12,8 @@ import Material
 //import ChameleonFramework
 import SwiftForms
 import SCLAlertView
+import Firebase
+import FirebaseDatabase
 
 private enum MenuSection {
     case all(content: AllContent)
@@ -132,6 +134,7 @@ class TutorSignUpViewController: FormViewController {
 }
 
 class TutorSignUpViewControllerOne : FormViewController {
+    var ref: FIRDatabaseReference!
     
     func displayAlert(title: String, message: String) {
         SCLAlertView().showInfo(title, subTitle: message)
@@ -168,7 +171,7 @@ class TutorSignUpViewControllerOne : FormViewController {
         
         //initializeForm()
         
-        
+        self.view.addBackground(imageName: "mixed2")
         
     }
     
@@ -288,12 +291,13 @@ class TutorSignUpViewControllerOne : FormViewController {
         row = FormRowDescriptor(tag: Static.textView, type: .multilineText, title: "About Me")
         section4.rows.append(row)
         
-        let section5 = FormSectionDescriptor(headerTitle: nil, footerTitle: nil)
+        let section5 = FormSectionDescriptor(headerTitle: " ", footerTitle: nil)
         
         //row.configuration.cell.appearance = ["textField.placeholder" : "This will be a part of your profile. Tell us about yourself. What are your extracurriculars?  Do you have experience with working with children?" as AnyObject, "textField.textAlignment" : NSTextAlignment.right.rawValue as AnyObject]
         row = FormRowDescriptor(tag: Static.button, type: .button, title: "Continue")
         row.configuration.button.didSelectClosure = { _ in
             self.view.endEditing(true)
+           // self.form.validateForm()
            if let zipcode = self.form.sections[0].rows[0].value,
             let schoolName = self.form.sections[1].rows[0].value,
             let phone    = self.form.sections[1].rows[1].value,
@@ -301,7 +305,36 @@ class TutorSignUpViewControllerOne : FormViewController {
             let birthday    = self.form.sections[2].rows[1].value,
             let preferredSubject = self.form.sections[2].rows[2].value,
             let description = self.form.sections[3].rows[0].value {
-                self.performSegue(withIdentifier: "toSecondVC", sender: self)
+            
+                self.ref = FIRDatabase.database().reference()
+            
+            
+                let userDefaults = UserDefaults.standard
+                if let email = userDefaults.value(forKey: "email"),
+                    let password = userDefaults.value(forKey: "password"),
+                    let name = userDefaults.value(forKey: "name"),
+                    let user = FIRAuth.auth()?.currentUser {
+                    
+                    self.ref.child("users").child(user.uid).setValue(["zipcode": zipcode,
+                                                                      "schoolName": schoolName,
+                                                                      "phone": phone,
+                                                                      "gender": gender,
+                                                                      "birthday": birthday,
+                                                                      "preferredSubject": preferredSubject,
+                                                                      "description": description,
+                                                                      "email": email,
+                                                                      "password": password,
+                                                                      "name": name], withCompletionBlock: { (error, ref) in
+                       if error == nil {
+                            self.performSegue(withIdentifier: "toSecondVC", sender: self)
+                       } else {
+                            self.displayAlert(title: "Error", message: (error?.localizedDescription)!)
+                       }
+                    })
+                }
+            
+            
+            
            } else {
                 self.displayAlert(title: "Error", message: "Please fill out every section.")
             }

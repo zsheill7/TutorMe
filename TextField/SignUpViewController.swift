@@ -122,10 +122,10 @@ class SignUpViewController: UIViewController {
     
     func createAccount() {
         if emailField.text == "" || nameField.text == "" || passwordField.text == "" || confirmPasswordField.text == "" {
-            displayAlert(title: "Oops!", message: "Please complete all fields")
+            displayAlert(title: "Error", message: "Please complete all fields")
             
         } else if emailField.text?.isEmail() == false{
-            displayAlert(title: "Oops!", message: "\"\(emailField.text!)\" is not a valid email address")
+            displayAlert(title: "Error", message: "\"\(emailField.text!)\" is not a valid email address")
         
         } else if passwordField.text!.characters.count < 6 {
             self.displayAlert(title: "Not Long Enough", message: "Please enter a password that is 6 or more characters")
@@ -252,7 +252,7 @@ class SignUpViewController: UIViewController {
         let emailButton = alert.addButton("Send Email") {
             if emailTextField.text != nil {
                 if emailTextField.text?.isEmail() == false {
-                    SCLAlertView().showInfo("Oops!", subTitle: "Please enter a valid email.")
+                    SCLAlertView().showInfo("Error", subTitle: "Please enter a valid email.")
                 } else {
                 FIRAuth.auth()?.sendPasswordReset(withEmail: emailTextField.text!, completion: { (error) in
                     var title = ""

@@ -130,13 +130,13 @@ class LoginViewController: UIViewController {
     }*/
     func logIn() {
         if self.emailField.text == "" || self.passwordField.text == "" {
-            self.displayAlert(title: "Oops!", message: "Please enter an email and password.")
+            self.displayAlert(title: "Error", message: "Please enter an email and password.")
         } else {
             FIRAuth.auth()?.signIn(withEmail: self.emailField.text!, password: self.passwordField.text!, completion: { (user, error) in
                 if error == nil {
                     self.performSegue(withIdentifier: "goToTutorOrTutee", sender: self)
                 } else {
-                    self.displayAlert(title: "Oops!", message: (error?.localizedDescription)!)
+                    self.displayAlert(title: "Error", message: (error?.localizedDescription)!)
                 }
             })
         }

@@ -36,6 +36,37 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        
+        /*self.view.backgroundColor = UIColor.init(
+         gradientStyle: UIGradientStyle.leftToRight,
+         withFrame: self.view.frame,
+         andColors: [ Color.blue.lighten4, Color.blue.lighten4 ]
+         )*/
+        /*UIGraphicsBeginImageContext(self.view.frame.size)
+         UIImage(named: "blur-images-18")?.draw(in: self.view.bounds)*/
+        self.view.addBackground(imageName: "mixed2")
+        //self.view.backgroundColor = UIColor.newSkyBlue()
+        /*var image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+         
+         UIGraphicsEndImageContext()
+         
+         self.view.backgroundColor = UIColor(patternImage: image)*/
+        
+        RZTransitionsManager.shared().defaultPresentDismissAnimationController = RZZoomAlphaAnimationController()
+        RZTransitionsManager.shared().defaultPushPopAnimationController = RZCardSlideAnimationController()
+        
+        //prepareNameField()
+        prepareEmailField()
+        preparePasswordField()
+        //prepareConfirmPasswordField()
+        prepareNextButton()
+        prepareForgotPasswordButton()
+        prepareSignupButton()
+    }
+    
+    func alreadySignedIn() {
         ref = FIRDatabase.database().reference()
         let currentUserUID = FIRAuth.auth()?.currentUser?.uid
         if currentUserUID != nil {
@@ -66,35 +97,7 @@ class LoginViewController: UIViewController {
             // No user is signed in.
             // ...
         }
-        
-        
-        /*self.view.backgroundColor = UIColor.init(
-         gradientStyle: UIGradientStyle.leftToRight,
-         withFrame: self.view.frame,
-         andColors: [ Color.blue.lighten4, Color.blue.lighten4 ]
-         )*/
-        /*UIGraphicsBeginImageContext(self.view.frame.size)
-         UIImage(named: "blur-images-18")?.draw(in: self.view.bounds)*/
-        self.view.addBackground(imageName: "mixed2")
-        //self.view.backgroundColor = UIColor.newSkyBlue()
-        /*var image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
-         
-         UIGraphicsEndImageContext()
-         
-         self.view.backgroundColor = UIColor(patternImage: image)*/
-        
-        RZTransitionsManager.shared().defaultPresentDismissAnimationController = RZZoomAlphaAnimationController()
-        RZTransitionsManager.shared().defaultPushPopAnimationController = RZCardSlideAnimationController()
-        
-        //prepareNameField()
-        prepareEmailField()
-        preparePasswordField()
-        //prepareConfirmPasswordField()
-        prepareNextButton()
-        prepareForgotPasswordButton()
-        prepareSignupButton()
     }
-    
     /*func createAccount() {
         if emailField.text == "" || nameField.text == "" || passwordField.text == "" || confirmPasswordField.text == "" {
             displayAlert(title: "Error", message: "Please complete all fields")

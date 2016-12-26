@@ -60,6 +60,7 @@ PODS:
   - RZTransitions (1.2.1)
   - SCLAlertView (0.7.0)
   - Spring (1.0.3)
+  - SwiftForms (1.7)
 
 DEPENDENCIES:
   - BTNavigationDropdownMenu (from `https://github.com/PhamBaTho/BTNavigationDropdownMenu.git`, branch `swift-3.0`)
@@ -76,6 +77,7 @@ DEPENDENCIES:
   - RZTransitions
   - SCLAlertView
   - Spring (from `https://github.com/MengTo/Spring.git`, branch `swift3`)
+  - SwiftForms
 
 EXTERNAL SOURCES:
   BTNavigationDropdownMenu:
@@ -126,7 +128,8 @@ SPEC CHECKSUMS:
   RZTransitions: 0e0013fda6989ee84dc5e44dca79fd539e1a975a
   SCLAlertView: 8a14ffc40590c619e183eed2298b854385f30be1
   Spring: 3f02b5dc3308572ef177b3cad0fa7bbc4b0706f7
+  SwiftForms: 3f3dbaa79fe54eb1ccd0aca8d0cd1e38eb00537e
 
-PODFILE CHECKSUM: 5b285e790051303f1e3d70aab7c71e5a49d3b514
+PODFILE CHECKSUM: 8692a3f83eecade52160c3b978abcaaf1289f54c
 
 COCOAPODS: 1.2.0.beta.1

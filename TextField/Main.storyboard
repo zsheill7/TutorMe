@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Custom Cells Controller-->
+        <!--Tutor Sign Up View Controller One-->
         <scene sceneID="tbt-KE-e25">
             <objects>
-                <tableViewController id="Ezx-Lo-7mX" customClass="CustomCellsController" customModule="TutorMe" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="Ezx-Lo-7mX" customClass="TutorSignUpViewControllerOne" customModule="TutorMe" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="UQN-Ik-6HD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -32,12 +32,12 @@
                         </connections>
                     </tableView>
                     <connections>
-                        <segue destination="X1N-CK-Yff" kind="show" identifier="toPagingMenuVC" id="LFT-85-Kq6"/>
+                        <segue destination="2XP-RT-pb8" kind="show" identifier="toSecondVC" id="ha2-mk-ba7"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h24-fb-nn7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="636" y="1181"/>
+            <point key="canvasLocation" x="23" y="1221"/>
         </scene>
         <!--Tutor-->
         <scene sceneID="EQF-AC-2xd">
@@ -45,7 +45,38 @@
                 <viewControllerPlaceholder storyboardName="Tutor" id="X1N-CK-Yff" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5mP-3f-mgJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-186" y="1591"/>
+            <point key="canvasLocation" x="-889" y="1807"/>
+        </scene>
+        <!--Tutor Sign Up View Controller Two-->
+        <scene sceneID="Ivg-fc-qSQ">
+            <objects>
+                <tableViewController id="2XP-RT-pb8" customClass="TutorSignUpViewControllerTwo" customModule="TutorMe" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="I59-LK-GId">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="bpe-fB-8Oj">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bpe-fB-8Oj" id="AR5-yK-ZsR">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="2XP-RT-pb8" id="bEA-bh-KuA"/>
+                            <outlet property="delegate" destination="2XP-RT-pb8" id="6bd-G4-Akg"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <segue destination="X1N-CK-Yff" kind="show" identifier="toPagingMenuVC" id="SXW-We-vip"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xj4-KV-VtS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-4" y="1907"/>
         </scene>
         <!--Tutor Or Tutee View Controller-->
         <scene sceneID="2OA-Hw-Woh">
@@ -162,7 +193,7 @@
             <objects>
                 <navigationController storyboardIdentifier="loginNC" automaticallyAdjustsScrollViewInsets="NO" id="1kV-iB-SjC" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="TX5-wN-JVX">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="TX5-wN-JVX">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -180,7 +211,7 @@
             <objects>
                 <navigationController storyboardIdentifier="signupNC" automaticallyAdjustsScrollViewInsets="NO" id="eDQ-NE-3k0" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="maU-b1-d8V">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="maU-b1-d8V">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

@@ -57,6 +57,36 @@ class SignUpViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+       
+        /*self.view.backgroundColor = UIColor.init(
+            gradientStyle: UIGradientStyle.leftToRight,
+            withFrame: self.view.frame,
+            andColors: [ Color.blue.lighten4, Color.blue.lighten4 ]
+        )*/
+        /*UIGraphicsBeginImageContext(self.view.frame.size)
+        UIImage(named: "blur-images-18")?.draw(in: self.view.bounds)*/
+        self.view.addBackground(imageName: "mixed2")
+        //self.view.backgroundColor = UIColor.newSkyBlue()
+        /*var image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        
+        UIGraphicsEndImageContext()
+        
+        self.view.backgroundColor = UIColor(patternImage: image)*/
+        
+        RZTransitionsManager.shared().defaultPresentDismissAnimationController = RZZoomAlphaAnimationController()
+        RZTransitionsManager.shared().defaultPushPopAnimationController = RZCardSlideAnimationController()
+        
+        prepareNameField()
+        prepareEmailField()
+        preparePasswordField()
+        prepareConfirmPasswordField()
+        prepareNextButton()
+        prepareForgotPasswordButton()
+        prepareLoginButton()
+    }
+    
+    func alreadySignedIn() {
         ref = FIRDatabase.database().reference()
         let currentUserUID = FIRAuth.auth()?.currentUser?.uid
         if currentUserUID != nil {
@@ -87,33 +117,7 @@ class SignUpViewController: UIViewController {
             // No user is signed in.
             // ...
         }
-        
-       
-        /*self.view.backgroundColor = UIColor.init(
-            gradientStyle: UIGradientStyle.leftToRight,
-            withFrame: self.view.frame,
-            andColors: [ Color.blue.lighten4, Color.blue.lighten4 ]
-        )*/
-        /*UIGraphicsBeginImageContext(self.view.frame.size)
-        UIImage(named: "blur-images-18")?.draw(in: self.view.bounds)*/
-        self.view.addBackground(imageName: "mixed2")
-        //self.view.backgroundColor = UIColor.newSkyBlue()
-        /*var image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
-        
-        UIGraphicsEndImageContext()
-        
-        self.view.backgroundColor = UIColor(patternImage: image)*/
-        
-        RZTransitionsManager.shared().defaultPresentDismissAnimationController = RZZoomAlphaAnimationController()
-        RZTransitionsManager.shared().defaultPushPopAnimationController = RZCardSlideAnimationController()
-        
-        prepareNameField()
-        prepareEmailField()
-        preparePasswordField()
-        prepareConfirmPasswordField()
-        prepareNextButton()
-        prepareForgotPasswordButton()
-        prepareLoginButton()
+
     }
     
     func createAccount() {
@@ -135,7 +139,10 @@ class SignUpViewController: UIViewController {
                     self.ref = FIRDatabase.database().reference()
                     self.ref.child("users").child((user?.uid)!).setValue(
                         ["name": self.nameField.text])
-                    
+                    let userDefaults = UserDefaults.standard
+                    userDefaults.setValue(self.emailField.text!, forKey: "email")
+                    userDefaults.setValue(self.passwordField.text!, forKey: "password")
+                    userDefaults.setValue(self.nameField.text!, forKey: "name")
                     
                     self.performSegue(withIdentifier: "goToTutorOrTutee", sender: self)
                     

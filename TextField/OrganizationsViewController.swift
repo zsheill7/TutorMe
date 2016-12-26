@@ -21,7 +21,7 @@ class OrganizationsViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let url = URL(string: "https://api.github.com/organizations")
+        /*let url = URL(string: "https://api.github.com/organizations")
         let request = URLRequest(url: url!)
         let session = URLSession(configuration: URLSessionConfiguration.default)
         
@@ -33,7 +33,7 @@ class OrganizationsViewController: UITableViewController {
                 self?.tableView.reloadData()
             })
         }
-        task.resume()
+        task.resume()*/
     }
 }
 

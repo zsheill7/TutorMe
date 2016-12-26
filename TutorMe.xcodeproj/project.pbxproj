@@ -271,15 +271,14 @@
 				C87984471E0B9760003EB7A1 /* Custom Row and Cell */,
 				C82800E61E107AC900329B7D /* In Tutor Storyboard */,
 				C82800E71E107B7D00329B7D /* In Main Storyboard */,
+				C827B53D1E11DF2C00BDFD50 /* About This App */,
 				96090AF01D9CDD2E00709CA6 /* LaunchScreen.storyboard */,
 				C82800E01E0F4F7600329B7D /* Tutee.storyboard */,
-				C827B4E61E10E34200BDFD50 /* SwiftForms */,
-				C82800E21E0FA38C00329B7D /* AboutThisApp.storyboard */,
-				C82800E41E0FA96D00329B7D /* AboutThisAppViewController.swift */,
 				C88FFC801E0DEFAC00E7972C /* TuteeTableViewController.swift */,
 				C88FFC821E0DEFD500E7972C /* ChatViewController.swift */,
 				C8EE88621E0DB256003775C2 /* CalendarViewController.swift */,
 				96090AEE1D9CDD2E00709CA6 /* Assets.xcassets */,
+				C827B4E61E10E34200BDFD50 /* SwiftForms */,
 				C82800DF1E0EFDEB00329B7D /* Extensions */,
 			);
 			name = TutorMe;
@@ -367,6 +366,15 @@
 			);
 			name = SwiftForms;
 			path = ../../../SwiftForms/SwiftForms;
+			sourceTree = "<group>";
+		};
+		C827B53D1E11DF2C00BDFD50 /* About This App */ = {
+			isa = PBXGroup;
+			children = (
+				C82800E21E0FA38C00329B7D /* AboutThisApp.storyboard */,
+				C82800E41E0FA96D00329B7D /* AboutThisAppViewController.swift */,
+			);
+			name = "About This App";
 			sourceTree = "<group>";
 		};
 		C82800DF1E0EFDEB00329B7D /* Extensions */ = {

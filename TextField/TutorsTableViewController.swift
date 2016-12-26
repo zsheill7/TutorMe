@@ -9,6 +9,7 @@
 import UIKit
 import FirebaseDatabase
 import FirebaseAuth
+import CoreLocation
 
 class TutorTableViewCell: UITableViewCell {
     
@@ -34,6 +35,7 @@ class TutorsTableViewController: UITableViewController {
 
     var dbRef: FIRDatabaseReference!
     var tutors = [User]()
+    var ref: FIRDatabaseReference!
     
     class func instantiateFromStoryboard() -> TutorsTableViewController {
         let storyboard = UIStoryboard(name: "MenuViewController", bundle: nil)
@@ -41,9 +43,13 @@ class TutorsTableViewController: UITableViewController {
     }
     
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        
+        
+        
         dbRef = FIRDatabase.database().reference().child("tutors")
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false

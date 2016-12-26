@@ -14,6 +14,7 @@ import SwiftForms
 import SCLAlertView
 import Firebase
 import FirebaseDatabase
+import CoreLocation
 
 private enum MenuSection {
     case all(content: AllContent)
@@ -310,6 +311,11 @@ class TutorSignUpViewControllerOne : FormViewController {
             
             
                 let userDefaults = UserDefaults.standard
+            
+            
+                
+            
+            
                 if let email = userDefaults.value(forKey: "email"),
                     let password = userDefaults.value(forKey: "password"),
                     let name = userDefaults.value(forKey: "name"),
@@ -326,6 +332,18 @@ class TutorSignUpViewControllerOne : FormViewController {
                                                                       "password": password,
                                                                       "name": name], withCompletionBlock: { (error, ref) in
                        if error == nil {
+                            var geocoder = CLGeocoder()
+                            geocoder.geocodeAddressString(zipcode as! String) { placemarks, error in
+                                if error != nil {
+                                    print("error")
+                                } else {
+                                    for placemark in placemarks! {
+                                        let location = placemark.location
+                                        self.ref.child("users/\(user.uid)/location").setValue(location)
+                                    }
+                                }
+                            }
+                        
                             self.performSegue(withIdentifier: "toSecondVC", sender: self)
                        } else {
                             self.displayAlert(title: "Error", message: (error?.localizedDescription)!)

@@ -44,6 +44,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         navigationBarAppearance.tintColor = UIColor.white
         navigationBarAppearance.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.white, NSFontAttributeName: UIFont(name: "HelveticaNeue", size: 18)]
         
+        /*let userDefaults = UserDefaults.standard
+        if let isTutor = userDefaults.value(forKey: "isTutor") as? Bool{
+            if isTutor == true {
+                let mainStoryboard: UIStoryboard = UIStoryboard(name: "Tutor", bundle: nil)
+                let viewController = mainStoryboard.instantiateViewController(withIdentifier: "tutorPagingMenuNC") as! UINavigationController
+                window?.rootViewController = viewController
+                //self.present(viewController, animated: true, completion: nil)
+            } else {
+                let mainStoryboard: UIStoryboard = UIStoryboard(name: "Tutee", bundle: nil)
+                let viewController = mainStoryboard.instantiateViewController(withIdentifier: "tuteePagingMenu NC") as! UINavigationController
+                window?.rootViewController = viewController
+               // self.present(viewController, animated: true, completion: nil)
+            }
+        } else {
+            
+        }*/
+        
         FIRApp.configure()
     }
     
